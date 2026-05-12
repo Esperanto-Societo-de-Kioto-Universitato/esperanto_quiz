@@ -7,26 +7,8 @@
 !.env.example
 gen-lang-client-*.json
 
-# Generated files
-__pycache__/
-*.py[cod]
-node_modules/
-test-results/
-playwright-report/
-
-# Large local assets
-audio/
-Esperanto例文5000文_収録音声/
-エスペラント例文5000枚のイメージ画像_jpeg_q80/
-PIV2020.html
-PIV2020_structured.txt
-
-# Local notes and working folders
+# Local deployment note
 Streamlit Cloudアップロード用_Chrome生成AI指示書.md
-４択アプリをブラッシュアップするためのエスペラントプロンプト.docx
-fuyou/
-編集ログ/
-git-helper-cross-platform-bundle/
 
 # OS noise
 .DS_Store
