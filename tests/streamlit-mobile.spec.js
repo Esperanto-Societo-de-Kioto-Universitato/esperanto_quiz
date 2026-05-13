@@ -89,7 +89,7 @@ test("Streamlit mobile entry uses the localStorage app and survives reload", asy
     mobileApp.locator("#promptAudioButton").click(),
   ]);
   expect(audioRequest.url()).not.toContain("drive.google");
-  expect(audioResponse.status()).toBe(200);
+  expect([200, 206]).toContain(audioResponse.status());
   expect(audioResponse.headers()["content-type"] || "").toMatch(/audio|octet-stream/);
 
   const quizMetrics = await mobileApp.locator("body").evaluate(() => {
@@ -217,21 +217,30 @@ test("Streamlit mobile sentence prompt audio is served only for Esperanto prompt
   await mobileApp.locator("#audioMode").selectOption("all");
   await mobileApp.locator("#lengthSelect").selectOption("10");
   await mobileApp.locator("#spartanMode").uncheck();
+  const sentenceAudioUrlPattern = /\/component\/mobile_streamlit_bridge\.esperanto_mobile_pwa\/sentence-audio\/.+\.wav$/;
+  const promptAudioResponsePromise = page.waitForResponse(
+    (response) => sentenceAudioUrlPattern.test(response.url()),
+    { timeout: 5000 },
+  );
   await mobileApp.locator("#startButton").scrollIntoViewIfNeeded();
   await mobileApp.locator("#startButton").click();
   await expect(mobileApp.locator("#quizView")).toHaveClass(/is-active/);
   await expect(mobileApp.locator("#promptAudioButton")).toBeVisible();
   await expect(mobileApp.locator(".choice-audio-button")).toHaveCount(0);
 
-  const sentenceAudioUrlPattern = /\/component\/mobile_streamlit_bridge\.esperanto_mobile_pwa\/sentence-audio\/.+\.wav$/;
-  const promptAudioResponsePromise = page.waitForResponse(
+  const promptAudioResponse = await promptAudioResponsePromise;
+  expect([200, 206]).toContain(promptAudioResponse.status());
+  expect(promptAudioResponse.headers()["content-type"] || "").toMatch(/audio|octet-stream/);
+
+  const session = await page.evaluate(() => JSON.parse(localStorage.getItem("esperanto-choice-mobile:session:v2")));
+  const answerIndex = session.questions[session.qIndex].answerIndex;
+  const nextPromptAudioResponsePromise = page.waitForResponse(
     (response) => sentenceAudioUrlPattern.test(response.url()),
     { timeout: 5000 },
   );
-  await mobileApp.locator("#promptAudioButton").click();
-  const promptAudioResponse = await promptAudioResponsePromise;
-  expect(promptAudioResponse.status()).toBe(200);
-  expect(promptAudioResponse.headers()["content-type"] || "").toMatch(/audio|octet-stream/);
+  await mobileApp.locator(`.choice-button[data-index="${answerIndex}"]`).click();
+  const nextPromptAudioResponse = await nextPromptAudioResponsePromise;
+  expect([200, 206]).toContain(nextPromptAudioResponse.status());
 
   expect(errors).toEqual([]);
 });
@@ -256,20 +265,28 @@ test("Streamlit mobile sentence choice audio is served only for Esperanto choice
   await mobileApp.locator("#audioMode").selectOption("all");
   await mobileApp.locator("#lengthSelect").selectOption("10");
   await mobileApp.locator("#spartanMode").uncheck();
+  const earlyAudioRequests = [];
+  const sentenceAudioUrlPattern = /\/component\/mobile_streamlit_bridge\.esperanto_mobile_pwa\/sentence-audio\/.+\.wav$/;
+  page.on("request", (request) => {
+    if (sentenceAudioUrlPattern.test(request.url())) {
+      earlyAudioRequests.push(request.url());
+    }
+  });
   await mobileApp.locator("#startButton").scrollIntoViewIfNeeded();
   await mobileApp.locator("#startButton").click();
   await expect(mobileApp.locator("#quizView")).toHaveClass(/is-active/);
   await expect(mobileApp.locator("#promptAudioButton")).toBeHidden();
   await expect(mobileApp.locator(".choice-audio-button").first()).toBeVisible();
+  await page.waitForTimeout(500);
+  expect(earlyAudioRequests).toHaveLength(0);
 
-  const sentenceAudioUrlPattern = /\/component\/mobile_streamlit_bridge\.esperanto_mobile_pwa\/sentence-audio\/.+\.wav$/;
   const choiceAudioResponsePromise = page.waitForResponse(
     (response) => sentenceAudioUrlPattern.test(response.url()),
     { timeout: 5000 },
   );
   await mobileApp.locator(".choice-audio-button").first().click();
   const choiceAudioResponse = await choiceAudioResponsePromise;
-  expect(choiceAudioResponse.status()).toBe(200);
+  expect([200, 206]).toContain(choiceAudioResponse.status());
   expect(choiceAudioResponse.headers()["content-type"] || "").toMatch(/audio|octet-stream/);
 
   expect(errors).toEqual([]);

@@ -1,4 +1,4 @@
-const APP_VERSION = "2026-05-13-mobile-audio-visible-text-1";
+const APP_VERSION = "2026-05-13-mobile-audio-auto-esperanto-prompt-1";
 const STORAGE_PREFIX = "esperanto-choice-mobile";
 const SESSION_KEY = `${STORAGE_PREFIX}:session:v2`;
 const SETTINGS_KEY = `${STORAGE_PREFIX}:settings:v2`;
@@ -185,6 +185,8 @@ const state = {
   latestScoreSyncResult: null,
   audioPlayer: null,
   audioPlaybackToken: 0,
+  autoPromptAudioAllowedUntil: 0,
+  lastAutoPromptAudioKey: "",
 };
 
 init().catch((error) => {
@@ -236,6 +238,7 @@ function bindEvents() {
   els.modeSentence.addEventListener("click", () => switchMode("sentence"));
   els.setupForm.addEventListener("submit", (event) => {
     event.preventDefault();
+    allowAutoPromptAudioFromUserAction();
     startQuiz();
   });
 
@@ -279,7 +282,10 @@ function bindEvents() {
   });
   els.nextButton.addEventListener("click", advanceAfterFeedback);
   els.syncScoreButton.addEventListener("click", syncScoreToSheets);
-  els.retryButton.addEventListener("click", retrySession);
+  els.retryButton.addEventListener("click", () => {
+    allowAutoPromptAudioFromUserAction();
+    retrySession();
+  });
   els.newQuizButton.addEventListener("click", () => {
     state.session = null;
     saveSession();
@@ -300,12 +306,14 @@ function bindEvents() {
   els.homeNav.addEventListener("click", () => setView("setup"));
   els.quizNav.addEventListener("click", () => {
     if (isActiveSession(state.session)) {
+      allowAutoPromptAudioFromUserAction();
       setView("quiz");
       renderQuiz();
     } else if (isCompleteSession(state.session)) {
       setView("result");
       renderResult();
     } else {
+      allowAutoPromptAudioFromUserAction();
       setView("setup");
       startQuiz();
     }
@@ -329,6 +337,7 @@ function bindEvents() {
 
 function resumeStoredSession() {
   if (isActiveSession(state.session)) {
+    allowAutoPromptAudioFromUserAction();
     setView("quiz");
     renderQuiz();
   } else if (isCompleteSession(state.session)) {
@@ -1114,6 +1123,7 @@ function renderQuiz() {
 
   renderFeedback();
   renderChoices(question);
+  maybeAutoPlayPromptAudio(session, question);
   queueSessionSave();
 }
 
@@ -1195,6 +1205,7 @@ function answerCurrentQuestion(selectedIndex) {
     applyCorrectAnswer(question);
     normalizeSessionPhase();
     saveSession();
+    allowAutoPromptAudioFromUserAction();
     renderQuiz();
     return;
   }
@@ -1250,6 +1261,7 @@ function advanceAfterFeedback() {
   session.feedback = null;
   normalizeSessionPhase();
   saveSession();
+  allowAutoPromptAudioFromUserAction();
   renderQuiz();
 }
 
@@ -1584,10 +1596,52 @@ function canPlayChoiceAudio(session, question, option) {
   );
 }
 
-async function playAudio(mode, option) {
+function allowAutoPromptAudioFromUserAction() {
+  state.autoPromptAudioAllowedUntil = Date.now() + 2500;
+}
+
+function maybeAutoPlayPromptAudio(session, question) {
+  if (!canAutoPlayPromptAudio(session, question)) {
+    return;
+  }
+  const key = getPromptAudioAutoKey(session, question);
+  if (!key || key === state.lastAutoPromptAudioKey) {
+    return;
+  }
+  state.lastAutoPromptAudioKey = key;
+  const answerOption = question.options[question.answerIndex];
+  playAudio(question.mode, answerOption, { silentFailure: true });
+}
+
+function canAutoPlayPromptAudio(session, question) {
+  return Boolean(
+    Date.now() <= state.autoPromptAudioAllowedUntil
+    && !session.showingFeedback
+    && canPlayPromptAudio(session, question),
+  );
+}
+
+function getPromptAudioAutoKey(session, question) {
+  const answerOption = question.options[question.answerIndex];
+  if (!answerOption?.audioKey) {
+    return "";
+  }
+  const phase = session.inSpartan ? "spartan" : "main";
+  return [
+    session.id,
+    phase,
+    getCurrentQuestionIndex(),
+    session.answers.length,
+    answerOption.audioKey,
+  ].join(":");
+}
+
+async function playAudio(mode, option, { silentFailure = false } = {}) {
   const urls = getAudioUrls(mode, option);
   if (!urls.length) {
-    showToast("音声ファイルがありません。");
+    if (!silentFailure) {
+      showToast("音声ファイルがありません。");
+    }
     return;
   }
   state.audioPlaybackToken += 1;
@@ -1605,7 +1659,9 @@ async function playAudio(mode, option) {
     }
   }
   console.warn("Audio playback failed", lastError);
-  showToast("音声を再生できませんでした。通信状態と音量設定を確認してください。");
+  if (!silentFailure) {
+    showToast("音声を再生できませんでした。通信状態と音量設定を確認してください。");
+  }
 }
 
 function getAudioPlayer() {

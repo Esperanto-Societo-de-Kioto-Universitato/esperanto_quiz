@@ -79,7 +79,7 @@ test("mobile quiz state survives reload", async ({ page }) => {
     page.locator("#promptAudioButton").click(),
   ]);
   expect(audioRequest.url()).toContain("/audio/");
-  expect(audioResponse.status()).toBe(200);
+  expect([200, 206]).toContain(audioResponse.status());
   expect(audioResponse.headers()["content-type"] || "").toMatch(/audio|octet-stream/);
 
   const quizMetrics = await page.evaluate(() => {
