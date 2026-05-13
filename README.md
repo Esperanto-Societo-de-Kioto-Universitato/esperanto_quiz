@@ -32,6 +32,8 @@ http://127.0.0.1:8501/?classic=1
 - 成績履歴は端末内に保存。Streamlit Cloud内では結果画面の「ランキングに保存」からGoogle Sheetsの累積得点・ランキングにも加算
 - スマホ版でも音声再生に対応。Streamlit Cloudでは `mobile_app/audio/` と `mobile_app/sentence-audio/` をコンポーネント配下から同一オリジン配信し、Google Drive manifestはフォールバックとして使います。
 - 音声は、画面に表示されているテキストがエスペラントのときだけ再生します。エスペラント→日本語では問題文を自動再生し、日本語→エスペラントでは日本語問題文を読まず、エスペラントの選択肢音声だけ再生できます。
+- 結果画面の復習リストでは、間違えた問題のエスペラント正解音声を手動再生できます。
+- スコア保存中に再読み込みされた場合も、同じ `save_id` で安全に再送し、Google Sheets側の重複加算を防ぎます。
 
 ## 静的PWAとしての単独起動
 
@@ -57,6 +59,8 @@ http://127.0.0.1:8765/mobile_app/
 python3 tools/build_mobile_data.py
 ```
 
+例文データはCSV上の5000件をすべて含めます。同じエスペラント文・同じ日本語訳の行も出題対象に残しつつ、4択の誤答候補では同一表示の選択肢を避けます。
+
 ## スマホ版で音声を使う場合
 
 Streamlit Cloud内蔵のスマホ版では、`mobile_app/audio/` と `mobile_app/sentence-audio/` の音声ファイルを直接再生します。Google Drive直リンクはスマホブラウザやiframe内で不安定になる場合があるため、現在は同一オリジン配信を優先し、`mobile_app/data/audio_manifest.json` はフォールバックとして使います。Streamlit CloudのSecrets追加は不要です。
@@ -81,6 +85,18 @@ sentence_base_url = "https://example.com/sentence-audio/"
 `vocab_base_url` / `sentence_base_url` は、Cloud Storageなどで `<base_url>/<audioKey>.wav` として配信する場合だけ指定します。
 
 ## 検証
+
+スマホ用JSON、CSV、音声ファイル、Google Driveフォールバックmanifestの整合性検証:
+
+```bash
+npm run validate:mobile-assets
+```
+
+WAVヘッダ確認を省いた高速確認:
+
+```bash
+npm run validate:mobile-assets:quick
+```
 
 静的PWA版の再読み込み復元、結果・履歴、保存データ復旧テスト:
 

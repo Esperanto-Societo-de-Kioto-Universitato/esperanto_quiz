@@ -1,6 +1,6 @@
 {
   "downloadBaseUrl": "https://drive.google.com/uc?export=download&id=",
-  "generatedAt": "2026-05-12T13:35:08.148302+00:00",
+  "generatedAt": "2026-05-13T12:17:00.201689+00:00",
   "provider": "google_drive",
   "schema": 1,
   "sentence": {
@@ -5007,15 +5007,11 @@
   },
   "sources": {
     "sentence": {
-      "extraDriveKeys": [
-        "0072_nedankinde",
-        "0114_pardonu_min",
-        "0156_atendu_momenton"
-      ],
+      "extraDriveKeys": [],
       "fileCount": 5000,
       "folderId": "1Mz5wgbIEBV-YMDxIwtklx7A4SFdLD53z",
       "label": "Esperanto例文5000文_収録音声",
-      "matchedDataKeys": 4997,
+      "matchedDataKeys": 5000,
       "missingDataKeys": []
     },
     "vocab": {

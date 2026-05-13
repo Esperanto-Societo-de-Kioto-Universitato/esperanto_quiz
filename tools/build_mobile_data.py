@@ -90,7 +90,6 @@ def build_vocab_payload() -> dict[str, object]:
 
 def build_sentence_payload() -> dict[str, object]:
     entries: list[dict[str, object]] = []
-    seen: set[tuple[str, str, str, str]] = set()
     for row in _read_csv(PHRASE_CSV):
         phrase_id = _safe_int(_clean(row.get("PhraseID")))
         level = _safe_int(_clean(row.get("LevelID")))
@@ -102,10 +101,6 @@ def build_sentence_payload() -> dict[str, object]:
             continue
         if not topic or not subtopic or not phrase or not japanese:
             continue
-        dedupe_key = (topic, subtopic, phrase, japanese)
-        if dedupe_key in seen:
-            continue
-        seen.add(dedupe_key)
         audio_key = _phrase_audio_key(phrase_id, phrase)
         entries.append(
             {

@@ -1,4 +1,4 @@
-const APP_VERSION = "2026-05-13-mobile-audio-auto-esperanto-prompt-1";
+const APP_VERSION = "2026-05-13-mobile-review-audio-5000-score-retry-1";
 const STORAGE_PREFIX = "esperanto-choice-mobile";
 const SESSION_KEY = `${STORAGE_PREFIX}:session:v2`;
 const SETTINGS_KEY = `${STORAGE_PREFIX}:settings:v2`;
@@ -187,6 +187,8 @@ const state = {
   audioPlaybackToken: 0,
   autoPromptAudioAllowedUntil: 0,
   lastAutoPromptAudioKey: "",
+  scoreSyncRetryQueuedFor: "",
+  scoreSyncRetryTimeout: null,
 };
 
 init().catch((error) => {
@@ -226,6 +228,7 @@ async function init() {
   } else {
     setView("setup");
   }
+  schedulePendingScoreSyncRetry();
   updateSaveStatus("準備完了");
 }
 
@@ -343,6 +346,7 @@ function resumeStoredSession() {
   } else if (isCompleteSession(state.session)) {
     setView("result");
     renderResult();
+    schedulePendingScoreSyncRetry();
   }
 }
 
@@ -456,6 +460,8 @@ function handleScoreSyncResult(result) {
   session.scoreSyncStatus = result.ok ? "saved" : "error";
   session.scoreSyncMessage = String(result.message || (result.ok ? "ランキングに保存しました。" : "保存に失敗しました。"));
   state.latestScoreSyncResult = result;
+  state.scoreSyncRetryQueuedFor = "";
+  window.clearTimeout(state.scoreSyncRetryTimeout);
   saveSession();
   if (state.currentView === "result") {
     renderResult();
@@ -657,9 +663,9 @@ function sanitizeSession(value) {
     savedToHistory: Boolean(value.savedToHistory),
     scoreSaveId: String(value.scoreSaveId || ""),
     scoreSyncRequestId: String(value.scoreSyncRequestId || ""),
-    scoreSyncStatus: scoreSyncStatus === "pending" ? "error" : scoreSyncStatus,
+    scoreSyncStatus,
     scoreSyncMessage: scoreSyncStatus === "pending"
-      ? "前回の保存結果を確認できませんでした。重複は防止されるため、もう一度保存を押してください。"
+      ? "前回の保存結果を確認中です。重複を防ぎながら自動で再送します。"
       : String(value.scoreSyncMessage || ""),
     startedAt: String(value.startedAt || new Date().toISOString()),
     updatedAt: String(value.updatedAt || new Date().toISOString()),
@@ -1047,7 +1053,11 @@ function buildSentenceQuestions(settings, rng) {
 }
 
 function buildQuestionFromEntry({ mode, correct, pool, stages, rng }) {
-  const wrongPool = pool.filter((entry) => entry !== correct);
+  const wrongPool = pool.filter((entry) => (
+    entry !== correct
+    && entry.eo !== correct.eo
+    && entry.ja !== correct.ja
+  ));
   if (wrongPool.length < 3) {
     return null;
   }
@@ -1330,6 +1340,7 @@ function renderResult() {
   els.countMetric.textContent = `${summary.correct}/${summary.total}`;
   renderScoreSyncControls(summary);
   renderReview();
+  schedulePendingScoreSyncRetry();
 }
 
 function renderScoreSyncControls(summary) {
@@ -1352,7 +1363,7 @@ function renderScoreSyncControls(summary) {
   if (session.scoreSyncStatus === "pending") {
     els.syncScoreButton.disabled = true;
     els.syncScoreButton.textContent = "保存中...";
-    els.syncScoreStatus.textContent = "Google Sheetsへ保存しています。";
+    els.syncScoreStatus.textContent = session.scoreSyncMessage || "Google Sheetsへ保存しています。";
     return;
   }
   if (session.scoreSyncStatus === "saved") {
@@ -1396,14 +1407,60 @@ function syncScoreToSheets() {
   if (session.scoreSyncStatus === "saved" || session.scoreSyncStatus === "pending") {
     return;
   }
+  sendScoreSyncRequest(session, summary, "Google Sheetsへ保存しています。");
+}
+
+function schedulePendingScoreSyncRetry() {
+  const session = state.session;
+  if (
+    !IS_STREAMLIT_COMPONENT
+    || !isCompleteSession(session)
+    || session.scoreSyncStatus !== "pending"
+  ) {
+    return;
+  }
+  const retryKey = `${session.id}:${session.scoreSaveId || ""}:${session.scoreSyncRequestId || ""}`;
+  if (state.scoreSyncRetryQueuedFor === retryKey) {
+    return;
+  }
+  state.scoreSyncRetryQueuedFor = retryKey;
+  window.clearTimeout(state.scoreSyncRetryTimeout);
+  state.scoreSyncRetryTimeout = window.setTimeout(() => {
+    const current = state.session;
+    if (!isCompleteSession(current) || current.scoreSyncStatus !== "pending") {
+      return;
+    }
+    const userName = String(current.settings.userName || "").trim();
+    if (!userName) {
+      current.scoreSyncStatus = "error";
+      current.scoreSyncMessage = "保存するにはユーザー名が必要です。";
+      state.scoreSyncRetryQueuedFor = "";
+      saveSession();
+      if (state.currentView === "result") {
+        renderResult();
+      }
+      return;
+    }
+    sendScoreSyncRequest(
+      current,
+      computeResultSummary(current),
+      "前回の保存結果を確認できなかったため、同じ保存IDで安全に再送しています。",
+    );
+  }, 500);
+}
+
+function sendScoreSyncRequest(session, summary, message) {
   if (!session.scoreSaveId) {
     session.scoreSaveId = `mobile-${session.id}`;
   }
   session.scoreSyncRequestId = createId();
   session.scoreSyncStatus = "pending";
-  session.scoreSyncMessage = "Google Sheetsへ保存しています。";
+  session.scoreSyncMessage = message;
+  state.scoreSyncRetryQueuedFor = `${session.id}:${session.scoreSaveId}:${session.scoreSyncRequestId}`;
   saveSession();
-  renderResult();
+  if (state.currentView === "result") {
+    renderResult();
+  }
   streamlitHost.setComponentValue(buildScoreSyncPayload(session, summary));
 }
 
@@ -1465,11 +1522,25 @@ function renderReview() {
       const prompt = question ? displayPrompt(question, session.settings.direction) : "";
       const selectedText = selected ? displayOption(selected, session.settings.direction) : "";
       const correctText = correct ? displayOption(correct, session.settings.direction) : "";
-      item.innerHTML = `
-        <strong>${escapeHtml(prompt)}</strong>
-        <p>正解: ${escapeHtml(correctText)}</p>
-        <p>回答: ${escapeHtml(selectedText || "-")}</p>
-      `;
+      const heading = document.createElement("div");
+      heading.className = "review-item-heading";
+      const title = document.createElement("strong");
+      title.textContent = prompt;
+      heading.append(title);
+      if (question && correct && canPlayReviewAudio(question, correct)) {
+        const audioButton = document.createElement("button");
+        audioButton.type = "button";
+        audioButton.className = "review-audio-button";
+        audioButton.textContent = "♪";
+        audioButton.setAttribute("aria-label", "エスペラント正解の音声を再生");
+        audioButton.addEventListener("click", () => playAudio(question.mode, correct));
+        heading.append(audioButton);
+      }
+      const correctLine = document.createElement("p");
+      correctLine.textContent = `正解: ${correctText}`;
+      const selectedLine = document.createElement("p");
+      selectedLine.textContent = `回答: ${selectedText || "-"}`;
+      item.append(heading, correctLine, selectedLine);
       return item;
     }),
   );
@@ -1594,6 +1665,10 @@ function canPlayChoiceAudio(session, question, option) {
     && areChoicesEsperanto(session.settings.direction)
     && hasPlayableAudioForMode(question.mode, option),
   );
+}
+
+function canPlayReviewAudio(question, option) {
+  return Boolean(question && option && hasPlayableAudioForMode(question.mode, option));
 }
 
 function allowAutoPromptAudioFromUserAction() {

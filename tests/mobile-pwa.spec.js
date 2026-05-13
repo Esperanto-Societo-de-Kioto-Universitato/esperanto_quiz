@@ -180,6 +180,47 @@ test("mobile result and history stay readable", async ({ page }) => {
   await expect(errors).toEqual([]);
 });
 
+test("mobile review can replay the Esperanto correct answer", async ({ page }) => {
+  const errors = [];
+  page.on("console", (message) => {
+    if (message.type() === "error") {
+      errors.push(message.text());
+    }
+  });
+  page.on("pageerror", (error) => errors.push(error.message));
+
+  const appUrl = process.env.MOBILE_APP_URL || "http://127.0.0.1:8765/mobile_app/";
+  await page.goto(appUrl, { waitUntil: "networkidle" });
+  await page.locator("#lengthSelect").selectOption("10");
+  await page.locator("#spartanMode").uncheck();
+  await page.locator("#startButton").scrollIntoViewIfNeeded();
+  await page.locator("#startButton").click();
+  await expect(page.locator("#quizView")).toHaveClass(/is-active/);
+
+  const startedSession = await page.evaluate(() => JSON.parse(localStorage.getItem("esperanto-choice-mobile:session:v2")));
+  const answerIndex = startedSession.questions[startedSession.qIndex].answerIndex;
+  const wrongIndex = (answerIndex + 1) % startedSession.questions[startedSession.qIndex].options.length;
+  await page.locator(`.choice-button[data-index="${wrongIndex}"]`).click();
+  await expect(page.locator("#feedbackPanel")).toBeVisible();
+  await page.locator("#nextButton").click();
+
+  await answerRemainingCorrectly(page, page);
+  await expect(page.locator("#resultView")).toHaveClass(/is-active/);
+  await expect(page.locator(".review-audio-button").first()).toBeVisible();
+
+  const audioUrlPattern = /\/audio\/.+\.wav$/;
+  const audioResponsePromise = page.waitForResponse(
+    (response) => audioUrlPattern.test(response.url()),
+    { timeout: 5000 },
+  );
+  await page.locator(".review-audio-button").first().click();
+  const audioResponse = await audioResponsePromise;
+  expect([200, 206]).toContain(audioResponse.status());
+  expect(audioResponse.headers()["content-type"] || "").toMatch(/audio|octet-stream/);
+
+  await expect(errors).toEqual([]);
+});
+
 test("mobile setup recovers from malformed localStorage", async ({ page }) => {
   const appUrl = process.env.MOBILE_APP_URL || "http://127.0.0.1:8765/mobile_app/";
   await page.goto(appUrl, { waitUntil: "networkidle" });

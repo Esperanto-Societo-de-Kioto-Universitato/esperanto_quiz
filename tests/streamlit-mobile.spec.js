@@ -198,6 +198,50 @@ test("Streamlit mobile result and history stay readable", async ({ page }) => {
   expect(errors).toEqual([]);
 });
 
+test("Streamlit mobile review can replay the Esperanto correct answer", async ({ page }) => {
+  const appUrl = process.env.STREAMLIT_APP_URL || "http://127.0.0.1:8501/";
+  const errors = [];
+  page.on("console", (message) => {
+    if (message.type() === "error") {
+      errors.push(message.text());
+    }
+  });
+  page.on("pageerror", (error) => errors.push(error.message));
+
+  await page.goto(appUrl, { waitUntil: "domcontentloaded" });
+  const mobileApp = page.frameLocator("iframe[title*='esperanto_mobile_pwa']");
+  await expect(mobileApp.locator("#startButton")).toBeEnabled({ timeout: 15000 });
+  await mobileApp.locator("#homeNav").click();
+  await mobileApp.locator("#lengthSelect").selectOption("10");
+  await mobileApp.locator("#spartanMode").uncheck();
+  await mobileApp.locator("#startButton").scrollIntoViewIfNeeded();
+  await mobileApp.locator("#startButton").click();
+  await expect(mobileApp.locator("#quizView")).toHaveClass(/is-active/);
+
+  const startedSession = await page.evaluate(() => JSON.parse(localStorage.getItem("esperanto-choice-mobile:session:v2")));
+  const answerIndex = startedSession.questions[startedSession.qIndex].answerIndex;
+  const wrongIndex = (answerIndex + 1) % startedSession.questions[startedSession.qIndex].options.length;
+  await mobileApp.locator(`.choice-button[data-index="${wrongIndex}"]`).click();
+  await expect(mobileApp.locator("#feedbackPanel")).toBeVisible();
+  await mobileApp.locator("#nextButton").click();
+
+  await answerRemainingCorrectly(page, mobileApp);
+  await expect(mobileApp.locator("#resultView")).toHaveClass(/is-active/);
+  await expect(mobileApp.locator(".review-audio-button").first()).toBeVisible();
+
+  const audioUrlPattern = /\/component\/mobile_streamlit_bridge\.esperanto_mobile_pwa\/audio\/.+\.wav$/;
+  const audioResponsePromise = page.waitForResponse(
+    (response) => audioUrlPattern.test(response.url()),
+    { timeout: 5000 },
+  );
+  await mobileApp.locator(".review-audio-button").first().click();
+  const audioResponse = await audioResponsePromise;
+  expect([200, 206]).toContain(audioResponse.status());
+  expect(audioResponse.headers()["content-type"] || "").toMatch(/audio|octet-stream/);
+
+  expect(errors).toEqual([]);
+});
+
 test("Streamlit mobile sentence prompt audio is served only for Esperanto prompts", async ({ page }) => {
   const appUrl = process.env.STREAMLIT_APP_URL || "http://127.0.0.1:8501/";
   const errors = [];
