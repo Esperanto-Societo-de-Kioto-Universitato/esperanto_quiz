@@ -1,3 +1,4 @@
+import time
 from pathlib import Path
 
 import streamlit as st
@@ -13,6 +14,7 @@ MOBILE_AUDIO_MANIFEST = MOBILE_APP_DIR / "data" / "audio_manifest.json"
 DRIVE_AUDIO_DOWNLOAD_BASE = "https://drive.google.com/uc?export=download&id="
 COMPONENT_VOCAB_AUDIO_BASE = "./audio/"
 COMPONENT_SENTENCE_AUDIO_BASE = "./sentence-audio/"
+MOBILE_RANKING_CACHE_TTL_SEC = 120
 
 _mobile_component = components.declare_component(
     "esperanto_mobile_pwa",
@@ -73,6 +75,8 @@ def render_mobile_app_entry(is_mobile: bool, *, source: str) -> bool:
     st.session_state.setdefault("mobile_score_sync_processed", {})
     st.session_state.setdefault("mobile_ranking_result", None)
     st.session_state.setdefault("mobile_ranking_processed", {})
+    st.session_state.setdefault("mobile_ranking_cached_result", None)
+    st.session_state.setdefault("mobile_ranking_cache_ts", 0.0)
 
     st.markdown(
         """
@@ -131,7 +135,17 @@ def render_mobile_app_entry(is_mobile: bool, *, source: str) -> bool:
         request_id = str(component_value.get("requestId", "")).strip()
         processed = st.session_state.mobile_ranking_processed
         if request_id and request_id not in processed:
-            result = load_mobile_rankings_request(component_value)
+            force = bool(component_value.get("force"))
+            cached = st.session_state.get("mobile_ranking_cached_result")
+            cache_age = time.time() - float(st.session_state.get("mobile_ranking_cache_ts") or 0.0)
+            if not force and isinstance(cached, dict) and cache_age < MOBILE_RANKING_CACHE_TTL_SEC:
+                result = dict(cached)
+                result["requestId"] = request_id
+            else:
+                result = load_mobile_rankings_request(component_value)
+                if result.get("ok"):
+                    st.session_state.mobile_ranking_cached_result = dict(result)
+                    st.session_state.mobile_ranking_cache_ts = time.time()
             st.session_state.mobile_ranking_result = result
             processed[request_id] = bool(result.get("ok"))
             if len(processed) > 100:

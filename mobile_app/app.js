@@ -1,4 +1,4 @@
-const APP_VERSION = "2026-05-13-mobile-ranking-cache-recovery-1";
+const APP_VERSION = "2026-05-13-mobile-ranking-timeout-1";
 const STORAGE_PREFIX = "esperanto-choice-mobile";
 const SESSION_KEY = `${STORAGE_PREFIX}:session:v2`;
 const SETTINGS_KEY = `${STORAGE_PREFIX}:settings:v2`;
@@ -32,6 +32,7 @@ const SPARTAN_SCORE_MULTIPLIER = 0.7;
 const HISTORY_MAX_ITEMS = 100;
 const HISTORY_RECOVERY_LIMITS = [50, 20, 5, 0];
 const RANKING_CACHE_TTL_MS = 120000;
+const RANKING_REQUEST_TIMEOUT_MS = 20000;
 
 const POS_LABELS = {
   noun: "名詞",
@@ -192,6 +193,7 @@ const state = {
   lastFrameHeight: 0,
   latestScoreSyncResult: null,
   rankings: createEmptyRankingsState(),
+  rankingRequestTimeout: null,
   audioPlayer: null,
   audioPlaybackToken: 0,
   autoPromptAudioAllowedUntil: 0,
@@ -308,10 +310,11 @@ function bindEvents() {
     if (!state.history.length) {
       return;
     }
-    if (window.confirm("保存された成績を消去しますか？")) {
+    if (window.confirm("この端末内の成績履歴だけを消去します。Google Sheetsのランキングや累積得点、進行中のクイズは消えません。実行しますか？")) {
       state.history = [];
       saveHistory();
       renderHistory();
+      showToast("端末内の成績履歴だけを消去しました。ランキングは消えていません。");
     }
   });
   els.rankingRefreshButton.addEventListener("click", () => requestRankings({ force: true }));
@@ -521,6 +524,8 @@ function handleRankingResult(result) {
   if (state.rankings.requestId && resultRequestId && resultRequestId !== state.rankings.requestId) {
     return;
   }
+  window.clearTimeout(state.rankingRequestTimeout);
+  state.rankingRequestTimeout = null;
   state.rankings.status = result.ok ? "ready" : "error";
   state.rankings.message = String(result.message || (result.ok ? "ランキングを更新しました。" : "ランキングを取得できませんでした。"));
   state.rankings.updatedAt = String(result.updatedAt || new Date().toISOString());
@@ -887,18 +892,29 @@ function requestRankings({ force = false } = {}) {
     renderCloudRankings();
     return;
   }
-  if (state.rankings.status === "loading") {
+  if (state.rankings.status === "loading" && !force) {
     renderCloudRankings();
     return;
   }
+  window.clearTimeout(state.rankingRequestTimeout);
   state.rankings.status = "loading";
   state.rankings.requestId = createId();
   state.rankings.message = "Google Sheetsからランキングを取得しています。";
+  const requestId = state.rankings.requestId;
+  state.rankingRequestTimeout = window.setTimeout(() => {
+    if (state.rankings.status !== "loading" || state.rankings.requestId !== requestId) {
+      return;
+    }
+    state.rankings.status = "error";
+    state.rankings.message = "ランキング取得に時間がかかっています。通信状態を確認して、更新を押してください。";
+    renderCloudRankings();
+  }, RANKING_REQUEST_TIMEOUT_MS);
   renderCloudRankings();
   streamlitHost.setComponentValue({
     type: "load_rankings",
     requestId: state.rankings.requestId,
     user: String(state.settings.userName || "").trim(),
+    force: Boolean(force),
     appVersion: APP_VERSION,
     ts: new Date().toISOString(),
   });
@@ -1727,7 +1743,8 @@ function renderCloudRankings() {
   });
 
   if (state.rankings.status === "loading") {
-    els.rankingRefreshButton.disabled = true;
+    els.rankingRefreshButton.disabled = false;
+    els.rankingRefreshButton.textContent = "再試行";
     els.rankingStatus.textContent = state.rankings.message || "ランキングを取得しています。";
     els.rankingList.replaceChildren(createRankingMessage("読み込み中です。"));
     requestFrameHeightSync();
@@ -1735,6 +1752,7 @@ function renderCloudRankings() {
   }
 
   els.rankingRefreshButton.disabled = false;
+  els.rankingRefreshButton.textContent = "更新";
   if (state.rankings.status === "idle") {
     els.rankingStatus.textContent = "未更新";
     els.rankingList.replaceChildren(createRankingMessage("更新を押すとランキングを取得します。"));

@@ -187,6 +187,7 @@ test("mobile result and history stay readable", async ({ page }) => {
 
   await page.locator("#historyNav").click();
   await expect(page.locator("#historyView")).toHaveClass(/is-active/);
+  await expect(page.locator("#clearHistoryButton")).toHaveText("端末履歴のみ消去");
   await expect(page.locator("#rankingStatus")).toContainText("Streamlit Cloud版");
   await expect(page.locator("#historyList .history-item").first()).toContainText("単語");
   await expect(errors).toEqual([]);
