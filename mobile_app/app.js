@@ -1035,6 +1035,7 @@ function setCurrentLink(link, isCurrent) {
   if (!link) {
     return;
   }
+  link.setAttribute("target", "_blank");
   link.classList.toggle("is-active", Boolean(isCurrent));
   if (isCurrent) {
     link.setAttribute("aria-current", "page");
@@ -1058,15 +1059,18 @@ function renderAppLinks() {
     }
     link.textContent = label;
     link.href = buildPublicAppUrl(targetLang, { mobile_app: "1", quiz: mode });
+    link.setAttribute("rel", "noopener noreferrer");
     setCurrentLink(link, targetLang === lang);
   });
 
   if (els.mobileAppLink) {
     els.mobileAppLink.href = buildPublicAppUrl(lang, { mobile_app: "1", quiz: mode });
+    els.mobileAppLink.setAttribute("rel", "noopener noreferrer nofollow");
     setCurrentLink(els.mobileAppLink, true);
   }
   if (els.classicAppLink) {
     els.classicAppLink.href = buildPublicAppUrl(lang, { classic: "1", quiz: mode });
+    els.classicAppLink.setAttribute("rel", "noopener noreferrer nofollow");
     setCurrentLink(els.classicAppLink, false);
   }
 }

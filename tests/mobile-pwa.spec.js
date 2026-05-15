@@ -44,7 +44,7 @@ test("mobile quiz state survives reload", async ({ page }) => {
   await expect(page.locator("#modeVocab")).toHaveAttribute("aria-selected", "true");
   await expect(page.locator("#jaAppLink")).toHaveClass(/is-active/);
   await expect(page.locator("#zhAppLink")).toHaveAttribute("href", /esperanto-quiz-zh\.streamlit\.app\/\?mobile_app=1&quiz=vocab/);
-  await expect(page.locator("#classicAppLink")).toHaveAttribute("target", "_top");
+  await expect(page.locator("#classicAppLink")).toHaveAttribute("target", "_blank");
   await expect(page.locator("#classicAppLink")).toHaveAttribute("href", /classic=1&quiz=vocab/);
 
   const setupMetrics = await page.evaluate(() => {

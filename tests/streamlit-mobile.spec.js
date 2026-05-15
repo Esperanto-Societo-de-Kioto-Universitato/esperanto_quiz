@@ -46,7 +46,7 @@ test("Streamlit mobile entry uses the localStorage app and survives reload", asy
   await mobileApp.locator("#modeVocab").click();
   await expect(mobileApp.locator("#modeVocab")).toHaveAttribute("aria-selected", "true");
   await expect(mobileApp.locator("#jaAppLink")).toHaveClass(/is-active/);
-  await expect(mobileApp.locator("#classicAppLink")).toHaveAttribute("target", "_top");
+  await expect(mobileApp.locator("#classicAppLink")).toHaveAttribute("target", "_blank");
   await expect(mobileApp.locator("#classicAppLink")).toHaveAttribute("href", /esperanto-quiz\.streamlit\.app\/\?classic=1&quiz=vocab/);
   await mobileApp.locator("#directionSelect").selectOption("ja_to_eo");
   await expect(mobileApp.locator("#directionSelect")).toHaveValue("ja_to_eo");
@@ -201,7 +201,10 @@ test("Streamlit mobile result and history stay readable", async ({ page }) => {
   await expect(mobileApp.locator("#historyView")).toHaveClass(/is-active/);
   await expect(mobileApp.locator("#cloudRankingTitle")).toBeVisible();
   await expect(mobileApp.locator("#rankingStatus")).not.toContainText("取得しています", { timeout: 25000 });
-  await expect(mobileApp.locator("#rankingStatus")).toHaveText(/ランキングを(更新|取得)|Streamlit Cloud|Secrets|通信状態/, { timeout: 5000 });
+  await expect(mobileApp.locator("#rankingStatus")).toHaveText(
+    /ランキングを(更新|取得)|Scoresログ集計|Streamlit Cloud|Secrets|通信状態/,
+    { timeout: 5000 },
+  );
   await expect(mobileApp.locator("#historyList .history-item").first()).toContainText("単語");
 
   await mobileApp.locator("#diagnosticsNav").click();
