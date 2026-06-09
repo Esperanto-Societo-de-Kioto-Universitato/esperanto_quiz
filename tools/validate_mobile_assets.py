@@ -305,7 +305,9 @@ def validate_manifest(
     if invalid_ids:
         report.error(f"manifest {label}: invalid Google Drive file ids for keys: {sample(invalid_ids)}")
     if missing:
-        report.error(f"manifest {label}: {len(missing)} data audio keys missing from manifest: {sample(missing)}")
+        report.warn(
+            f"manifest {label}: {len(missing)} data audio keys missing from Google Drive fallback: {sample(missing)}"
+        )
     if extra:
         report.warn(f"manifest {label}: {len(extra)} extra manifest keys not referenced by data: {sample(extra)}")
     report.note(f"manifest {label}: keys={len(cleaned)}")

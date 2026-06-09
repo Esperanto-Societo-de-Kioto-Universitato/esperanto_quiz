@@ -2461,7 +2461,7 @@
 2615,4,Intermediate 2,Hotel,Asking about Facilities,Ĉu vi permesas hejmbestojn?,Do you allow pets?,ペット同伴は可能ですか？,允许携带宠物吗？,반려동물 동반이 가능한가요?,Вы разрешаете проживание с домашними животными?
 2616,4,Intermediate 2,Hotel,Asking about Facilities,Ĉu ĉi tie estas naĝejo?,Is there a swimming pool?,プールはありますか？,有游泳池吗？,수영장이 있나요?,Здесь есть бассейн?
 2617,4,Intermediate 2,Hotel,Asking about Facilities,Ĉu estas lavservo?,Is there a laundry service?,ランドリーサービスはありますか？,有洗衣服务吗？,세탁 서비스가 있나요?,Здесь есть услуга прачечной?
-2618,8,Advanced 3,Hotel,Asking about Facilities,Ĉu estas minibaro en mia ĉambro?,Is there a minibar in my room?,部屋にミニバーはありますか？,我的房间里有迷你吧吗？,제 방에 미니바가 있나요?,В моём номере есть мини-бар?
+2618,8,Advanced 3,Hotel,Asking about Facilities,Ĉu estas trinkejeto en mia ĉambro?,Is there a minibar in my room?,部屋にミニバーはありますか？,我的房间里有迷你吧吗？,제 방에 미니바가 있나요?,В моём номере есть мини-бар?
 2619,8,Advanced 3,Hotel,Asking about Facilities,Ĉu vi havas ĉambron por fumantoj?,Have you got a smoking room?,喫煙できるお部屋はありますか？,请问有吸烟房吗？,흡연 가능한 객실이 있나요?,У вас есть номер для курящих?
 2620,5,Intermediate 3,Hotel,Asking about Facilities,Ĉu en la ĉambro estas televido?,Has the room got a television?,お部屋にテレビはありますか？,房间里有电视吗？,객실에 텔레비전이 있나요?,В номере есть телевизор?
 2621,8,Advanced 3,Hotel,Asking about Facilities,Ĉu vi havas ĉambroservon?,Have you got room service?,ルームサービスはございますか？,请问有客房送餐服务吗？,룸서비스가 있나요?,У вас есть обслуживание номеров?
@@ -2623,7 +2623,7 @@
 2777,7,Advanced 2,Hotel,Checking out,Bonvolu mendi taksion por mi,Please order a taxi for me.,タクシーを呼んでください。,请帮我叫一辆出租车。,택시를 불러 주세요.,"Пожалуйста, закажите мне такси."
 2778,7,Advanced 2,Hotel,Checking out,Via taksio estas ĉi tie,Your taxi's here.,タクシーが到着しました。,您的出租车到了。,택시가 도착했어요.,Ваше такси здесь.
 2779,5,Intermediate 3,Hotel,Checking out,Kiom estas la sumo?,How much is the total?,合計はいくらですか？,一共多少钱？,총 금액이 얼마인가요?,Сколько всего?
-2780,5,Intermediate 3,Hotel,Checking out,Ĉu vi uzis la minibaron?,Have you used the minibar?,ミニバーをご利用になりましたか？,您使用过迷你吧吗？,미니바를 이용하셨나요?,Вы пользовались мини-баром?
+2780,5,Intermediate 3,Hotel,Checking out,Ĉu vi uzis la ĉambran fridujeton?,Have you used the minibar?,ミニバーをご利用になりましたか？,您使用过迷你吧吗？,미니바를 이용하셨나요?,Вы пользовались мини-баром?
 2781,5,Intermediate 3,Hotel,Checking out,"Ne, ni ne uzis ĝin","No, we haven't.",いいえ、使っていません。,没有，我们没有使用。,"아니요, 이용하지 않았어요.","Нет, не пользовались."
 2782,5,Intermediate 3,Hotel,Checking out,Ĉu la servokotizo estas inkluzivita?,Is the service charge included?,サービス料は含まれていますか？,服务费包含在内吗？,서비스 요금이 포함되어 있나요?,Сервисный сбор включён?
 2783,5,Intermediate 3,Hotel,Checking out,Servokotizo ne estas inkluzivita,Service charge is not included.,サービス料は含まれておりません。,服务费未包含在内。,서비스 요금이 포함되어 있지 않습니다.,Сервисный сбор не включён.
@@ -2641,7 +2641,7 @@
 2795,9,Expert 1,Hotel,Checking out,Ĉu estus eble elregistriĝi pli malfrue?,Would it be possible to have a late checkout?,レイトチェックアウトは可能でしょうか。,请问可以延迟退房吗？,늦은 체크아웃이 가능할까요?,Можно ли будет выехать из номера позже?
 2796,8,Advanced 3,Hotel,Checking out,Kiom estas la servokotizo kaj la imposto?,How much is the service charge and tax?,サービス料と税金はいくらですか。,服务费和税费一共是多少？,서비스 요금과 세금은 얼마인가요?,Сколько составляет сервисный сбор и налог?
 2797,9,Expert 1,Hotel,Checking out,Ĉu mi povas ricevi detaligitan fakturon?,Can I have an itemised bill?,明細書をいただけますか？,可以给我一份明细账单吗？,상세 청구서를 받을 수 있을까요?,Я могу получить детализированный счёт?
-2798,9,Expert 1,Hotel,Checking out,Kiom oni fakturis al mi por la minibaro?,How much was I charged for the minibar?,ミニバーの料金はいくら請求されましたか？,迷你吧的费用是多少？,미니바 이용 요금이 얼마였나요?,Сколько с меня взяли за пользование мини-баром?
+2798,9,Expert 1,Hotel,Checking out,Kiom oni fakturis al mi por la trinkaĵoj el la ĉambra ŝranketo?,How much was I charged for the minibar?,ミニバーの料金はいくら請求されましたか？,迷你吧的费用是多少？,미니바 이용 요금이 얼마였나요?,Сколько с меня взяли за пользование мини-баром?
 2799,10,Expert 2,Hotel,Checking out,Internaciaj vokoj estas inkluzivitaj en la fakturo,International calls are included in the bill.,国際電話の料金も請求書に含まれています。,国际通话费用已包含在账单中。,국제 전화 요금이 청구서에 포함되어 있습니다.,Международные звонки включены в счёт.
 2800,9,Expert 1,Hotel,Checking out,Mi trovas ĝin iom multekosta,I find it a little expensive.,少し高いと感じます。,我觉得有点贵。,조금 비싼 것 같아요.,"Мне кажется, это немного дороговато."
 2801,10,Expert 2,Hotel,Checking out,Ĉu mi povas uzi personan ĉekon?,Can I use a personal cheque?,個人の小切手は使えますか？,我可以使用个人支票吗？,개인 수표를 사용할 수 있나요?,Я могу воспользоваться именным чеком?

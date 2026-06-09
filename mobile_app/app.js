@@ -5,7 +5,7 @@ import {
   scoreForCorrect,
 } from "./quiz_core.mjs";
 
-const APP_VERSION = "2026-05-19-mobile-quality-1";
+const APP_VERSION = "2026-06-09-minibaro-audio";
 const STORAGE_PREFIX = "esperanto-choice-mobile";
 const SESSION_KEY = `${STORAGE_PREFIX}:session:v2`;
 const SETTINGS_KEY = `${STORAGE_PREFIX}:settings:v2`;
