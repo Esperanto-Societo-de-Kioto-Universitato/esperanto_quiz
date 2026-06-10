@@ -185,6 +185,15 @@
 - 単独の `Bonvolu` と `Bonvolu + 不定詞` の正用例
 - `Li laboras sur farmo`、`Ĉu la jaĥto estas asekurita por urĝaj situacioj?`
 
+## 第7ラウンド追加裁定
+
+第7ラウンドでは、Claude Code が `Mi feriumas` → `Mi ferias` を graylist 候補として挙げた。
+Codex側でPIV2020と実使用例を確認した結果、`ferii` の方が辞書的・標準的ではあるが、
+`feriumi` も透明な派生で、入国審査の「休暇中です」という応答として意味が明確に通ると判断した。
+
+教材方針として「正しい範囲内の多様性」を残すため、PID 2074 `Mi feriumas` は維持した。
+したがって第7ラウンドでのCSV・音声・モバイルデータの追加変更はない。
+
 ## 音声・モバイルデータ
 
 修正文の音声は RHVoice `spomenka` で作成した。

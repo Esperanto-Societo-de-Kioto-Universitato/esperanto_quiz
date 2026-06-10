@@ -947,3 +947,54 @@ Claude Code の第6ラウンド提案を、PIVの語法、PMEG的な文法整理
 `mobile_app/data/sentences.json` と `mobile_app/data/audio_manifest.json` は再生成済み。
 Drive fallback は、第6ラウンド新51音声のアップロード前で `matchedDataKeys=4949` / `missingDataKeys=51`。
 Drive側には第6ラウンド旧51音声と第5ラウンド以前の旧5音声、計56件が `extraDriveKeys` として残る。
+
+---
+
+# 第7ラウンド（定型句・疑問詞・造語法・-um レンズ・2026-06-11）
+
+最後の未走査レンズ4本: 社交定型句の慣用性（185文）・kia/kio/kiom 疑問文census（全44文）・
+長複合語の造語法（58種）・-um 派生語の正統性（真の派生 約20種）。
+
+## Claude第7ラウンド調査結果: ほぼ完全クリーン — 確定グレー1件のみ
+
+### 【graylist 中】PID 2074 — "Mi feriumas"
+- → **"Mi ferias"** を推奨。PIV2020 の ferio 項（29687行）は **ferii**（"Ĝui ferion"）のみを
+  派生し、feriumi は PIV・ReVo とも不在（-um は正規派生で表せない時のための接尾辞であり、
+  ferii が既に同義のため -um 形は冗長）。ただし口語では一定の通用があるため、Codex が
+  Tekstaro/Monato で実例を確認できれば維持も可。修正時は音声1本。
+
+## Codex第7ラウンド最終裁定・適用結果（2026-06-11）
+
+PID 2074 `Mi feriumas` は**維持**する。
+
+PIV2020 では標準的な見出しとして `ferio` から `ferii`（休暇を楽しむ）が派生しており、
+`feriumi` は掲載されていない。この点だけを見れば `Mi ferias` がより辞書的・標準的な言い方である。
+ただし、`feriumi` は `ferio` + `-um-` + `-i` による透明な派生で、実際の使用例も確認できる。
+「休暇を過ごす／休暇中である」という意味も文脈上明確であり、誤解を招く造語や意味ズレとは言いにくい。
+
+この教材では「正しい範囲内の多様性を残す」方針を優先するため、ここは `Mi ferias` に正規化しない。
+標準形だけを教えるなら `Mi ferias` もよいが、現行文は入国審査での簡潔な応答として十分成立する。
+したがってCSV・音声・モバイルデータの変更は行わない。
+
+### スケプティク検証で棄却された候補（記録のみ・対応不要）
+- 定型句: 228 "Tio estas tre afabla de vi"・2072 "Ĝuu vian restadon!" — 変異の範囲内
+- kia 疑問文: 1690 salajro / 4266・4300 kurzo / 1709 kariera celo — **PIV自身の編集例
+  "kia estas la ĉimatena temperaturo?" / Z "kia estas via aĝo?" が kia+計測名詞を是認**
+- 複合語: 2882 skatolmalfermilo（PIVは elladigilo だが合成として可読）・4172 telekomandilo
+  （PIV telekomandi から派生可能）・4711 kontaktlensoj（連結母音無し形も通用）
+
+## クリーン証明（再調査不要）
+- **定型句185文**: 全主要定型が正典どおり — "Bonan tagon!"（*Havu bonan tagon を正しく回避）、
+  Sanon!（くしゃみ）、Je via sano!（乾杯）、Bonan apetiton!、Gratulon!/Feliĉan X-on! 系列、
+  Dankon/Nedankinde、Pardonu 系 — **即席逐語訳による定型置換はゼロ**
+- **kia 疑問文44文**: 明確な誤りゼロ（936 は修正済み）
+- **長複合語58種**: 不正な分節・語順・不透明な造語ゼロ。連結母音 -o- の挿入/省略は
+  PIV流儀と一致（butikoŝtelistoj / telerlavmaŝino / interezprocento 等すべて正格）
+- **-um 派生語**: feriumi 以外すべて PIV2020 確立語（akvumi・brakumi・butikumi・foliumi・
+  gustumi・literumi・malvarmumo・mezumo・ondumado・panumi・plandumo・tendumi・ventumilo）
+
+## 収量曲線と最終判断
+R5: forced 3 + gray 12 → R6: defect 36 + gray 12 → **R7: gray 1**。
+収量は明確に枯渇した。語彙(×2)・連語・語義・固有名詞・文法(8観点)・定型句・疑問詞・
+造語法・-um の**全レンズを走査完了**。本書をもって発掘フェーズを終了し、
+以後は Codex 裁定（特に第6ラウンドの bonvolu 家族26文と defect 10件）に移行すべきである。
