@@ -701,3 +701,249 @@ passed だが、Drive fallback については `missingDataKeys` 45件・`extraD
 - `npm run validate:mobile-assets`: passed
 
 これにより、ローカル同梱音声だけでなく、Google Drive fallback も整合状態になった。
+
+---
+---
+
+# 第5ラウンド（クローズアウト精密プローブ・2026-06-11未明・Codex引き渡し用）
+
+網羅性批評が完了宣言の条件として勧告した2プローブ（偽りの友スイープ・概念訳語一貫性マイニング）
+を正式実行し、固有名詞ポリシー監査と最終ミニバッチ検品を併走させた。
+結果: **新規 forced級 3件＋graylist 約12件**。批評の勧告どおり、この層にはまだ実りがあった。
+
+## 【強候補】forced級 3件（いずれも一語〜一句の修正・音声再収録各1本）
+
+### R5-1. PID 2184 — "En **kazo** de fajro uzu la ŝtuparon"（Plane/Airport Signs）
+- → **"En okazo de fajro..."**（標識用に簡潔なら "Okaze de fajro..."）
+- 根拠: PIV2020 kaz/o（51965行）は文法・法律・医学の3語義のみで、一般の「〜の場合」語義なし。
+  Z慣用は "en okazo de"（"en okazo de bezono" ^Z, bezon/o 11987行）。falsa amiko 型の語義借用。
+  コーパスの okaz- 正用（1311-1313）との内部不整合。
+
+### R5-2. PID 2172 — "**Kriza elirejo**"（Plane/Airport Signs）
+- → **"Savelirejo"**
+- 根拠: PIVの派生見出し savelirejo（ir/i 配下 45834行）の用例が "savelirejo en teatro,
+  **EN AVIADILO**" と、まさにこの空港標識の文脈。**コーパス自身が PID 2744 で Savelirejo を
+  正用**（内部不整合）。
+
+### R5-3. PID 3410 — "**Kia grandeco ĝi estas?**"（Shopping）
+- → **"Kiun grandecon ĝi havas?"**（または "Kia estas ĝia grandeco?"）
+- 根拠: kia-копula構文は主語が述語名詞の実例である必要（"Kia homo li estas?"）。服=grandeco
+  というカテゴリエラーで、英 "What size is it?" の語順移植。**同小トピック PID 3449 が正規形**。
+
+## 【graylist medium】1件
+- **PID 4934 "fotokabino"** → fotobudo / fotoaŭtomato（eo-wiki記事名）。露 фотокабина の
+  鏡像（feni型シグネチャ）。kabin/o はPIV見出しに無し（kabineto のみ）。PIVの公衆ボックスは
+  bud/o（telefonbudo）。ReVo確認を Codex に依頼。
+
+## 【graylist low】11件（要点のみ・全て維持も可）
+| PID | 項目 | 論点 |
+|---|---|---|
+| 2483 | Urĝa bremso | 緊急なのは状況であってブレーキではない（英 calque）。sav-/kriz- 系統一なら Krizbremso |
+| 2765/2794/2795 | elregistriĝi ×3 | PIVに el- 形なし（チェックアウト）。現代用法としては可。代替 elloĝiĝi。3文一括判断 |
+| 2649 | plenan pensionon | PIVのRim.が宿泊費語義を明示的に非推奨。ただし旅行語彙として定着 → KEEP寄り |
+| 1701 | pensia programo | programo に制度語義なし。pensia sistemo が和訳（年金制度）に密着。優先度極低 |
+| 4058 | tribuno（観客席） | PIVの語義は要人席・演壇のみ。露 трибуна 鏡像。ReVo次第 → KEEP寄り |
+| 2551 | Oxford-strato 等ハイブリッド | 同カテゴリの Bond Street / Charing Cross（生表記）と不統一 |
+| 2512 | Kings Cross | 正式名は King's（アポストロフィ）— EN列の表記のみの問題 |
+| 2593 | Bankoko | PIVは Bangkoko、eo-wikiは Bankoko — **基準同士が矛盾する唯一の都市名**。裁定を Codex に |
+| 2443 | Abu-Dabio | PIV・eo-wiki 主形とも Abudabio（ハイフン形はリダイレクトのみ） |
+| 860/584 | Emilin / Laŭran | PIV形は Emilio/Laŭro だが現代の女性名 -i/-a 形は学習者に自然 → KEEP推奨・方針記録のみ |
+| 2271 | pagmaŝino | PIV・コーパス慣行（bankaŭtomato×3等）とも -aŭtomato。統一なら pagaŭtomato。KEEPも可 |
+
+## 【クリーン確認】（再調査不要の記録）
+- **falsaj amikoj 約80語根**: 上記以外すべてPIV語義どおり（akurateco=時間厳守、novelo=短編、
+  rezigni=断念、magazeno=PIV語義2、recepto 両語義、poliso、miliardo、konkurso 等すべて正用）。
+- **概念訳語の一貫性 36概念**: rezervi 完全統一・elpreni 完全転換（retir- 残存ゼロ）・
+  kaŭcio/antaŭpago/garantiaĵo の使い分け正確・kvitanco/monpuno/asekuro/horaro/kajo 等すべて整合。
+- **露語ミラー 25語根＋110語幹**: remont/anketo/vokzal/kupe 等の典型露語借用は全て不在または正規。
+- **固有名詞 169語**: 方針は驚くほど一貫（国名100%エス化・ランドマーク生表記=eo-wiki記事名準拠・
+  **人名は対格が必要な位置でのみエス化するという隠れた文法則**まで観察され、格エラーはゼロ）。
+- **最終ミニバッチ4文**: 全てクリーン（elpreno de mono はPIV散文の型・per は意味論的に正しい・
+  La rezulto estis egala 自然）。※訂正: "La rezulto estis egala" は PID 4014（3859ではない）。
+
+## 正式クローズアウト
+網羅性批評が課した条件（精密ダブレットマイナー実行＋falsaj amikoj スイープ）を満たした。
+単語2周・連語1周・機械プローブ2種・語義1周・固有名詞1周・修正後検品2周を完了し、
+**残るのは本書のグレーリストの Codex 裁定のみ**。Claude Code 側の発掘ミッションはここで完了。
+
+## Codex第5ラウンド最終裁定・適用結果（2026-06-10）
+
+Claude Code の第5ラウンド提案を、学習教材としての標準性・透明性・意味保持・多様性維持の観点で再判定した。
+単にPIV見出しがない、または外来語風であるだけでは修正せず、次のどちらかに当たるものだけを採用した。
+
+- PIV/既存コーパスに、より明確で同じ意味を保つ形がある。
+- 現行表現が英露語の構文・語義を強く移しており、初学者に誤った語感を与えやすい。
+
+### 追加で適用した修正（5文）
+
+- PID 2172: `Kriza elirejo` → `Savelirejo`
+  - PIVに `savelirejo en teatro, en aviadilo` の用例があり、空港・機内標識として最も透明。PID 2744 既出表現とも一致。
+- PID 2184: `En kazo de fajro uzu la ŝtuparon` → `Okaze de fajro uzu la ŝtuparon`
+  - 一般の「〜の場合」は `kazo` より `okazo/okaze` が教材として安全。標識文として簡潔な副詞形を採用。
+- PID 2483: `Urĝa bremso` → `Krizbremso`
+  - `urĝa` 自体は正規語だが、固定設備名としては「緊急時用ブレーキ」を表す `kriz-` 合成の方が誤解が少ない。
+- PID 3410: `Kia grandeco ĝi estas?` → `Kiun grandecon ĝi havas?`
+  - 服そのものを `grandeco` とする英語式構文を避け、同小トピックの `Kian grandecon havas...` 型に合わせた。
+- PID 4934: `Ĉu vi havas fotokabinon?` → `Ĉu vi havas fotobudon?`
+  - `kabin/o` は手元PIVで確認できず、露語 `фотокабина` の鏡像に見える。PIV掲載語根 `bud/o` による `fotobudo` は意味が透明。
+
+### 維持した候補
+
+- PID 2765/2794/2795 `elregistriĝi`
+  - PIV見出し外でも、`registriĝi` からの規則的派生としてチェックアウト文脈で理解しやすい。`elloĝiĝi` はかえって不自然寄り。
+- PID 2649 `plena pensiono`
+  - 旅行・宿泊語彙として定着しており、訳列の full board / パンシオン系とも対応するため維持。
+- PID 1701 `pensia programo`
+  - `pensia sistemo` も可能だが、福利厚生の「制度・プログラム」として意味は保てる。明確な誤りではないため維持。
+- PID 4058 `centra tribuno`
+  - スポーツ施設の観客席として実例があり、`spektantejo` 等への置換はニュアンスを変えうるため維持。
+- PID 2551/2512/2593/2443 の地名・通り名表記
+  - 固有名詞は教材内で「国名はエス化、ランドマーク・通り名は実用表記を許容」という方針が概ね通っている。表記統一だけを目的に音声再収録まではしない。
+- PID 584/860 `Laŭran` / `Emilin`
+  - 対格が必要な位置で人名をエスペラント化しており、文法上問題なし。
+- PID 2271 `pagmaŝino por parkumado`
+  - `pagaŭtomato` も可能だが、現在形は意味が透明で、駐車料金支払い機として教材上十分に安全。
+
+### 音声・データ反映
+
+追加5文は RHVoice `spomenka` で音声を再生成し、root音声とスマホ用音声を同期した。
+
+- 候補ログ: `編集ログ/phrases_audio_replacement_candidates_20260610_forced_loanwords_round5.csv`
+- 生成ログ: `編集ログ/phrases_audio_replacement_generation_20260610_forced_loanwords_round5.csv`
+- 音声照合レポート: `編集ログ/audio_alignment_report_20260610_forced_loanwords_round5.md`
+- 旧root音声退避先: `Esperanto例文5000文_収録音声/archived_replaced_audio_20260610_forced_loanwords_round5/`
+
+`mobile_app/data/sentences.json` は再生成済み。Google Drive fallback は、この時点では新5音声が未アップロード、
+旧5音声がDrive側に残るため、`mobile_app/data/audio_manifest.json` では `missingDataKeys=5` / `extraDriveKeys=5`
+として記録される。ローカル同梱音声は root / mobile とも5000件で揃っている。
+
+---
+---
+
+# 第6ラウンド（文法・自然さレンズ・2026-06-11・Codex引き渡し用）
+
+第5ラウンドまでの「語彙・連語・語義」と相補的な最後の層＝**文法レベルの不自然さ**を全数走査した
+（対格・再帰所有詞・時制/アスペクト・冠詞・前置詞・一致・語順・接続詞の8観点 × 全5,000文、
+＋esti+分詞110文の専用精査）。検証はPMEG級文法家役スケプティクが過剰フラグを棄却済み。
+
+## 🎯 最大の発見:「, bonvolu」英語pleaseタグ家族（全26文・系統的）
+
+文末に裸の bonvolu/bonvole を英語の ", please" として付加するパターン。PIVの bonvoli は
+「Esti tiel bona, ke oni afable konsentas」で全用例が**不定詞補語付き**（聞き手の好意への言及）。
+- 宣言文＋bonvolu（"Mi ŝatus koktelon, **bonvolu**"）は、意味上「私はカクテルが欲しい —
+  ご親切であれ!」となり破綻。"Ĉu ni povus pagi, **bonvole**?" は副詞が話者側の行為に係り
+  「我々が親切にも払う」と逆転。
+- **コーパス自身の規範**: ", mi petas" ×134文、"Bonvolu+不定詞" ×128文（隣接文に正用例多数:
+  2967 "La samon denove, mi petas" / 3017 "Ni ŝatus mendi antaŭmanĝaĵojn, mi petas"）。
+- 修正型: **", bonvolu" → ", mi petas"**（一括置換可能・各文音声再収録）。
+
+全26文の内訳（タイプ別）:
+- **A型: 宣言文+bonvolu（明確な欠陥・9文）**: 2978, 2980, 3040, 3091, 3243, 3249, 3311, 4691,
+  4768, 4918※ ※Mi ŝatus系
+- **B型: 命令文+bonvolu（PMEGが明示的に却下する二重命令・4文）**: 2909 (Sekvu min), 4880
+  (Plilaŭtigu), 4881 (Mallaŭtigu), ＋2312（Por 25 frankoj）
+- **C型: bonvole疑問文（副詞の係り先逆転・2文）**: 2986, 3105
+- **D型: 省略名詞句+bonvolu（弁護可能だが mi petas 規範と不統一・11文）**: 2073 (La sekva,
+  bonvolu!), 2106, 2750, 2910, 3030, 3202, 3366, 3553, 4384, 4682
+- Codex への提案: A〜C型は修正推奨、D型は「省略不定詞の bonvolu」と読めるため裁量
+  （ただし統一の観点では全26文を mi petas に揃えるのが最も簡明）。
+
+## 【defect級】その他の文法欠陥 10件
+
+| PID | 現在 | 問題 | 修正案 |
+|---|---|---|---|
+| 240 | la plej malmulto, **kion** mi povis fari | 名詞先行詞の後は kiu系（PIV自身のZ用例 "el tiu malmulto, **kiun** mi scias"）＋ "la plej malmulto" 自体が変則 | "la plej malgranda afero, **kiun**..." |
+| 3582 | io speciala, **kiun** vi ŝatus vidi | 逆方向の同種エラー: io 先行詞の後は **kio**（PIV ki/o 語義4a明文） | "io speciala, **kion**..." |
+| 992 | Li estas **divorciĝinta** | PIVの divorci は (ntr)＝eksedz(in)iĝi で変化動詞。-iĝ 二重付加 | "Li estas **eksedziĝinta**"（または divorcinta） |
+| 1528 | Du mil **foje** kvin estas dek mil | 乗算演算子は Fundamento/PIV 全例で **-oble**（"kvinoble sep estas tridek kvin" ^Z） | "**Kvinoble du mil** estas dek mil" 型 |
+| 1809 | por **atingi tien** | atingi は (tr) 専用（PIV全用例が直接目的語）。tien と非両立 | "por **alveni** tien" |
+| 1726 | Ĉu mi povus ricevi **aliĝilon**?（就職面接） | PIVの aliĝilo は団体・大会への加入申込書のみ。求職応募書類ではない | "**kandidatiĝan formularon**" |
+| 2295 | Vi lasis viajn lumojn **ŝaltitajn** | 目的語述語に -n は不可（PIV: "lasu ŝin trankvil**a**" ^Z, "lasu min sol**a**" ^Z） | "...lumojn **ŝaltitaj**" |
+| 2377 | **Ne trinku kaj veturu** | 三重カルク: ① ne の作用域は第1動詞のみ（合成的には「飲むな、そして運転せよ」）② 飲酒は drinki ③ 英語慣用の直訳 | "**Ne stiru ebria**"（または "Ne veturu, se vi drinkis"） |
+| 4481 | kie mi povas **lasi ripari** mian fotoaparaton | PIV Rim.4 の igi/lasi 区別（lasi=黙認、igi=使役）。英 "have it repaired"/独 lassen の移植 | "kie mi povas **riparigi**..." |
+| 4762 | **pakaĵon** da aspirino | PIVの pakaĵo は旅行荷物・発送小包専用 | "**paketon** da aspirino" |
+
+## 【graylist】12件（判断材料つき・Codex裁量）
+| PID | 項目 | 論点 |
+|---|---|---|
+| 286 | resti **plu longe** | plu 自体が「より長く」（PIV語釈 "(pli longatempe)"）— 重複。pli longe / plu resti |
+| 936 | **Kia** estas via nacieco? | 同定質問は kio（"Kia estas via nomo?" 型エラー・露語列が出所） |
+| 990 | Ĉu vi **edziniĝis**? | -is は「結婚した（出来事）」。EN/JA は状態質問 → "Ĉu vi estas edziniĝinta?"（984 と不統一） |
+| 1479 | **Kvarfoje** tri estas dek du | PIV の同一例文は "kvar**oble** tri estas dekdu"（1528より軽度） |
+| 4006 | asekurita **por** urĝaj situacioj | PIVの asekuri はリスク補語に全例 **kontraŭ** |
+| 4962 | Ĉu kiu giĉeto estas **poŝtrestante**? | poŝtrestante は郵便物に書く副詞表記であり述語にならない（Z） |
+| 1718 | labori **laŭvice**（交代勤務） | PIVは skipo（シフト）。laŭvice=順番に |
+| 2000 | **Suriru**（無目的語） | suriri は (tr)。"Eniru" / "Suriru la ŝipon" |
+| 2249等 | **Turnu** maldekstren ×6文 | turni は (tr)。2243 は正しく turniĝu — 内部不統一（6文家族: 2242/2249/2250/2267/2282/2284） |
+| 2466 | **kontraŭi** + 不定詞 | PIVの kontraŭi は名詞/al 補語のみ。"Ĉu vi kontraŭus, se mi..." 型へ |
+| 1557 | laboras **sur farmo** | PIVの土地・施設は en farmoj（ただし Z "sur sian bienon" もあり証拠は混在） |
+| 922 | la 欠落: **Unuiĝintaj Arabaj Emirlandoj** | 複数形国名は la 付きが規範 |
+
+## 【クリーン確認】（基礎文法の健全性証明・再調査不要）
+- **sia/lia 再帰所有詞**: 全文で誤りゼロ（機械＋人間の二重確認）
+- **間接話法の時制バックシフト**: ゼロ（ke節は正しく未来形を保持: 1762, 2068, 2560 等）
+- **複合時制カルク**: 110文精査で "estis -inta"（過去完了引き写し）・"estas -anta"（進行形
+  引き写し）は**ゼロ** — esti+分詞は全て正常な述語形容詞・受動分詞
+- 方向対格（sur la gazonon 309 / en la universitaton 396 / en la aviadilon 2011）、
+  数量 da、義務の volitivo、se節の未来形、目的語述語の無 -n（551, 594, 2800）等、
+  難所はおおむね正確 — **基礎文法の土台は堅牢**。
+
+## 第6ラウンド総括
+「不自然なエスペラント表現」の最終層として、**defect級 36文**（bonvolu家族26＋単発10）と
+graylist 12件を Codex に引き渡す。これらは外来語ではなく**構文・語法の英語写し**であり、
+minibaro 監査の自然な完結編にあたる。修正時はいずれも音声再収録を要する。
+
+## Codex第6ラウンド最終裁定・適用結果（2026-06-11）
+
+Claude Code の第6ラウンド提案を、PIVの語法、PMEG的な文法整理、既存コーパス内の使い分け、
+および「正しい範囲内の多様性は残す」という教材方針で再判定した。
+
+結論として、**51文を追加修正**した。内訳は次の通り。
+
+- 文末 `bonvolu/bonvole` pleaseタグ: 26文を `mi petas` に統一。
+  - ただし、単独の `Bonvolu`（PID 334）と `Bonvolu + 不定詞` の正用例は維持した。
+  - ここは「`bonvolu` という語が誤り」という判断ではなく、文末タグとして量産されている型を教材向けに整理したもの。
+- defect級: 10文を修正。
+  - `divorciĝinta` → `eksedziĝinta`
+  - `atingi tien` → `alveni tien`
+  - `aliĝilo` → `kandidatiĝa formularo`
+  - 目的語述語の `ŝaltitajn` → `ŝaltitaj`
+  - `Ne trinku kaj veturu` → `Ne stiru ebria`
+  - `lasi ripari` → `riparigi`
+  - `pakaĵo da aspirino` → `paketo da aspirino`
+  - `io speciala, kiun` → `io speciala, kion`
+  - 乗算表現は `-oble` に統一
+  - `la plej malmulto` は `la plej malgranda afero` に自然化
+- graylistから採用: 15文を修正。
+  - `resti plu longe` → `resti pli longe`
+  - `Kia estas via nacieco?` → `Kio estas via nacieco?`
+  - 婚姻状態質問を `Ĉu vi estas edziniĝinta?` に修正
+  - `labori laŭvice` → `labori laŭ deĵoroj`
+  - `suriru` は目的語 `la aviadilon` を補足
+  - `Turnu ...` 6文を、既存PID 2243に合わせて `Turniĝu ...` に統一
+  - `kontraŭi + 不定詞` を `Ne ĝenas min ...` に自然化
+  - `poŝtrestante` を `poŝtrestantaj sendaĵoj` として整理
+
+維持したもの:
+
+- PID 334 `Bonvolu`
+  - 短い応答・見出し的な「お願いします」として、教材内の多様性として維持。
+- 既存の `Bonvolu + 不定詞` 系
+  - PMEG/PIV的にも丁寧な依頼として成立し、既存コーパスでも多数の正用例がある。
+- PID 1557 `Li laboras sur farmo`
+  - `en farmo` も可能だが、`sur farmo` は農場という場所・敷地で働く表現として許容範囲と判断。
+- PID 4006 `Ĉu la jaĥto estas asekurita por urĝaj situacioj?`
+  - `asekurita kontraŭ ...` 型も考えられるが、現行文は「緊急時に備えて保険があるか」という意味を保っており、修正で意味が狭まりやすい。
+
+### 音声・データ反映
+
+追加51文は RHVoice `spomenka` で音声を再生成し、root音声とスマホ用音声を同期した。
+
+- 候補ログ: `編集ログ/phrases_audio_replacement_candidates_20260611_grammar_round6.csv`
+- 生成ログ: `編集ログ/phrases_audio_replacement_generation_20260611_grammar_round6.csv`
+- 音声照合レポート: `編集ログ/audio_alignment_report_20260611_grammar_round6.md`
+- 旧root音声退避先: `Esperanto例文5000文_収録音声/archived_replaced_audio_20260611_grammar_round6/`
+
+`mobile_app/data/sentences.json` と `mobile_app/data/audio_manifest.json` は再生成済み。
+Drive fallback は、第6ラウンド新51音声のアップロード前で `matchedDataKeys=4949` / `missingDataKeys=51`。
+Drive側には第6ラウンド旧51音声と第5ラウンド以前の旧5音声、計56件が `extraDriveKeys` として残る。

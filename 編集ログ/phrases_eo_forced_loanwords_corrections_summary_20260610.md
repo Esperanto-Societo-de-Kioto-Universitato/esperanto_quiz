@@ -8,7 +8,7 @@
 
 `minibaro` 級の強引な外来語化や、英語・ロシア語の連語をそのまま移したような表現を点検し、エスペラント学習教材として明確に直した方がよい箇所だけを修正した。
 
-最終的なCSV差分は **69行**。音声差し替え操作は **71件** だが、これは PID 2271 と PID 3248 を途中でさらに再調整したためで、最終CSV上の変更行数は69行である。
+最終的なCSV差分は **125行**。音声差し替え操作は **127件** だが、これは PID 2271 と PID 3248 を途中でさらに再調整したためで、最終CSV上の変更行数は125行である。
 
 ## 判断方針
 
@@ -21,12 +21,12 @@
 
 | 区分 | 内容 | 件数 |
 |---|---:|---:|
-| 最終CSV変更行 | 現在CSVとHEADの比較で確認した変更行 | 69 |
-| 音声生成操作 | 第1・第2・第3・最終検品の合計 | 71 |
+| 最終CSV変更行 | 一連の修正前のCSVから最終CSVまでの変更行 | 125 |
+| 音声生成操作 | 第1・第2・第3・最終検品・第5・第6ラウンドの合計 | 127 |
 | root例文音声 | `Esperanto例文5000文_収録音声/` のWAV | 5000 |
 | スマホ例文音声 | `mobile_app/sentence-audio/` のWAV | 5000 |
-| Drive fallback | 必要な5000件はアップロード後に全一致 | matched 5000 / missing 0 |
-| Drive上の旧重複 | 手作業削除後に解消 | 0 |
+| Drive fallback | 第6ラウンド新51音声のアップロード前 | matched 4949 / missing 51 |
+| Drive上の旧重複 | 第5・第6ラウンド旧音声がDrive側に残存 | extra 56 |
 
 ## 最終修正一覧
 
@@ -54,9 +54,12 @@
 | 1968 | `Sur ĉi tiu aviadilo ne plu estas lokoj` | `En ĉi tiu aviadilo ne plu estas lokoj` | 機内は `en aviadilo` が自然 |
 | 1987 | `Ĉu estas liberaj lokoj sur ĉi tiu flugo?` | `Ĉu estas liberaj lokoj por ĉi tiu flugo?` | 便に対する空席として `por` へ |
 | 2158 | `Ĉu sur la aviadilo estas stevardino, kiu parolas la hebrean?` | `Ĉu en la aviadilo estas stevardino, kiu parolas la hebrean?` | 機内は `en aviadilo` |
+| 2172 | `Kriza elirejo` | `Savelirejo` | PIV用例 `savelirejo ... en aviadilo` に合わせる |
+| 2184 | `En kazo de fajro uzu la ŝtuparon` | `Okaze de fajro uzu la ŝtuparon` | 一般の「〜の場合」は `okaze de` が教材として安全 |
 | 2271 | `Kie estas la parkometro?` | `Kie estas la pagmaŝino por parkumado?` | `parkometro` を避けつつ、支払い機の焦点を保持 |
 | 2290 | `Vi pasos superbazaron maldekstre` | `Vi preterpasos superbazaron maldekstre` | 「通り過ぎる」は `preterpasi` |
 | 2464 | `Mi ŝatus aldoni 10 funtojn al ĝi` | `Mi ŝatus aldoni 10 pundojn al ĝi` | 通貨ポンドは `pundoj` に統一 |
+| 2483 | `Urĝa bremso` | `Krizbremso` | 固定設備名として「緊急時用」を明確化 |
 | 2620 | `Ĉu en la ĉambro estas televido?` | `Ĉu en la ĉambro estas televidilo?` | 機器は `televidilo` |
 | 2640 | `Mi ŝatus fari rezervon` | `Mi ŝatus rezervi` | `make a reservation` 直訳を避ける |
 | 2684 | `Mi faris rezervon` | `Mi rezervis` | 同上 |
@@ -77,6 +80,7 @@
 | 3330 | `Li ŝatas kaperojn` | `Li ŝatas kaporojn` | 食用ケッパーは `kaporo` |
 | 3334 | `Li havos iom da faboj` | `Li manĝos iom da faboj` | 食べる意味の `havi` を回避 |
 | 3347 | `Mi ŝatas cerealojn` | `Mi ŝatas cerealaĵojn` | 朝食用シリアルとして `cerealaĵo` |
+| 3410 | `Kia grandeco ĝi estas?` | `Kiun grandecon ĝi havas?` | 英語式構文を避け、既存の `Kian grandecon havas...` 型へ |
 | 3526 | `Ĉu estas certifikato por ĝi?` | `Ĉu estas atestilo por ĝi?` | 証明書は既存コーパスの `atestilo` に統一 |
 | 3568 | `Ĉu ĝi venas kun instrukcioj?` | `Ĉu instrukcioj estas inkluzivitaj?` | 英語 `come with` 直訳を回避 |
 | 3682 | `Mi ŝatus duonduzenon da ovoj` | `Mi ŝatus ses ovojn` | 非PIV寄りの `duonduzeno` を数詞で明確化 |
@@ -100,7 +104,66 @@
 | 4708 | `Li havas grandajn dioptriojn` | `Li bezonas fortajn okulvitrojn` | 光学単位の所有表現を回避 |
 | 4802 | `Kiun mobilan reton vi havas?` | `Kiun poŝtelefonan reton vi havas?` | `mobile network` 直訳感を避ける |
 | 4871 | `Je kioma horo li estas atendata reveni?` | `Je kioma horo oni atendas, ke li revenos?` | 英語風受動構文を自然化 |
+| 4934 | `Ĉu vi havas fotokabinon?` | `Ĉu vi havas fotobudon?` | `fotokabino` の露語鏡像感を避け、PIV語根 `bud/o` で透明化 |
 | 4941 | `Bonvolu pezi ĉi tiun pakaĵon` | `Bonvolu pesi ĉi tiun pakaĵon` | 他動詞「量る」は `pesi` |
+
+## 第6ラウンド追加修正一覧
+
+第6ラウンドでは、強引な外来語ではなく、構文・語法の英露語写しや文法上の不整合を中心に51文を追加修正した。`Bonvolu + 不定詞` の正用例や単独の `Bonvolu` は維持し、文末pleaseタグとして並ぶものだけ `mi petas` に寄せた。
+
+| PID | 修正前 | 修正後 | 主な理由 |
+|---:|---|---|---|
+| 240 | `Tio estis la plej malmulto, kion mi povis fari` | `Tio estis la plej malgranda afero, kiun mi povis fari` | 名詞先行詞との一致と定型句の自然化 |
+| 286 | `Mi timas, ke mi ne povas resti plu longe` | `Mi timas, ke mi ne povas resti pli longe` | `plu longe` の重複感を避ける |
+| 922 | `Li loĝas en Unuiĝintaj Arabaj Emirlandoj` | `Li loĝas en la Unuiĝintaj Arabaj Emirlandoj` | 複数形国名の冠詞を補う |
+| 936 | `Kia estas via nacieco?` | `Kio estas via nacieco?` | 国籍の同定質問として自然化 |
+| 990 | `Ĉu vi edziniĝis?` | `Ĉu vi estas edziniĝinta?` | 出来事ではなく婚姻状態の質問へ |
+| 992 | `Li estas divorciĝinta` | `Li estas eksedziĝinta` | `divorci` への二重 `-iĝ-` を避ける |
+| 1479 | `Kvarfoje tri estas dek du` | `Kvaroble tri estas dek du` | 乗算表現を `-oble` に統一 |
+| 1528 | `Du mil foje kvin estas dek mil` | `Dumiloble kvin estas dek mil` | 乗算表現を `-oble` に統一 |
+| 1718 | `Ĉu mi devos labori laŭvice?` | `Ĉu mi devos labori laŭ deĵoroj?` | 交代勤務を `deĵoro` で明確化 |
+| 1726 | `Ĉu mi povus ricevi aliĝilon?` | `Ĉu mi povus ricevi kandidatiĝan formularon?` | 求職文脈の応募書類として明確化 |
+| 1809 | `Kiom da tempo necesas por atingi tien?` | `Kiom da tempo necesas por alveni tien?` | `atingi` の直接目的語問題を避ける |
+| 2000 | `Kie mi suriru?` | `Kie mi suriru la aviadilon?` | 他動詞 `suriri` の目的語を明示 |
+| 2073 | `La sekva, bonvolu!` | `La sekva, mi petas!` | 文末pleaseタグを `mi petas` に統一 |
+| 2106 | `Vian doganan deklaracion, bonvolu` | `Vian doganan deklaracion, mi petas` | 同上 |
+| 2242 | `Turnu dekstren` | `Turniĝu dekstren` | 方向転換は `turniĝi` 型へ |
+| 2249 | `Kie mi turnu?` | `Kie mi turniĝu?` | 同上 |
+| 2250 | `Turnu dekstren ĉe la kruciĝo` | `Turniĝu dekstren ĉe la kruciĝo` | 同上 |
+| 2267 | `Turnu dekstren ĉe la T-kruciĝo` | `Turniĝu dekstren ĉe la T-kruciĝo` | 同上 |
+| 2282 | `Turnu maldekstren ĉe la unua turniĝo` | `Turniĝu maldekstren ĉe la unua turniĝo` | 同上 |
+| 2284 | `Turnu dekstren ĉe la dua turniĝo` | `Turniĝu dekstren ĉe la dua turniĝo` | 同上 |
+| 2295 | `Vi lasis viajn lumojn ŝaltitajn` | `Vi lasis viajn lumojn ŝaltitaj` | 目的語述語の形容詞から対格を外す |
+| 2312 | `Por 25 frankoj, bonvolu` | `Por 25 frankoj, mi petas` | 文末pleaseタグを `mi petas` に統一 |
+| 2377 | `Ne trinku kaj veturu` | `Ne stiru ebria` | 道路標識として飲酒運転を直接表す |
+| 2466 | `Mi ne kontraŭas vojaĝi per trajno ĉiutage` | `Ne ĝenas min vojaĝi per trajno ĉiutage` | `kontraŭi + 不定詞` を避ける |
+| 2750 | `La ŝlosilon de ĉambro numero 621, bonvolu!` | `La ŝlosilon de ĉambro numero 621, mi petas!` | 文末pleaseタグを `mi petas` に統一 |
+| 2909 | `Sekvu min, bonvolu` | `Sekvu min, mi petas` | 同上 |
+| 2910 | `Infanan seĝeton, bonvolu` | `Infanan seĝeton, mi petas` | 同上 |
+| 2978 | `Mi ŝatus koktelon, bonvolu` | `Mi ŝatus koktelon, mi petas` | 同上 |
+| 2980 | `Mi prenos la samon, bonvolu` | `Mi prenos la samon, mi petas` | 同上 |
+| 2986 | `Ĉu mi povus vidi la vinkarton, bonvole?` | `Ĉu mi povus vidi la vinkarton, mi petas?` | `bonvole` の係り先の曖昧さを避ける |
+| 3030 | `Ankoraŭ iomete, bonvolu` | `Ankoraŭ iomete, mi petas` | 文末pleaseタグを `mi petas` に統一 |
+| 3040 | `Pardonu, ni ŝatus mendi, bonvolu` | `Pardonu, ni ŝatus mendi, mi petas` | 同上 |
+| 3091 | `Ni ŝatus mendi deserton, bonvolu` | `Ni ŝatus mendi deserton, mi petas` | 同上 |
+| 3105 | `Ĉu ni povus pagi, bonvole?` | `Ĉu ni povus pagi, mi petas?` | `bonvole` の係り先の曖昧さを避ける |
+| 3202 | `Tri glasetojn da tekilo, bonvolu` | `Tri glasetojn da tekilo, mi petas` | 文末pleaseタグを `mi petas` に統一 |
+| 3243 | `Mi prenos la kokidan supon, bonvolu` | `Mi prenos la kokidan supon, mi petas` | 同上 |
+| 3249 | `Ni prenos kokidajn flugilojn, bonvolu` | `Ni prenos kokidajn flugilojn, mi petas` | 同上 |
+| 3311 | `Mi prenos tomatsupon, bonvolu` | `Mi prenos tomatsupon, mi petas` | 同上 |
+| 3366 | `Hejmfaritan panon, bonvolu` | `Hejmfaritan panon, mi petas` | 同上 |
+| 3553 | `Akvorezistan ŝminkon por okulharoj, bonvolu` | `Akvorezistan ŝminkon por okulharoj, mi petas` | 同上 |
+| 3582 | `Ĉu estas io speciala, kiun vi ŝatus vidi?` | `Ĉu estas io speciala, kion vi ŝatus vidi?` | `io` 先行詞に合わせた相関詞へ |
+| 4384 | `Rekte malantaŭe, bonvolu` | `Rekte malantaŭe, mi petas` | 文末pleaseタグを `mi petas` に統一 |
+| 4481 | `Ĉu vi scias, kie mi povas lasi ripari mian fotoaparaton?` | `Ĉu vi scias, kie mi povas riparigi mian fotoaparaton?` | 修理依頼の使役は `riparigi` が自然 |
+| 4682 | `Iom pli larĝe, bonvolu` | `Iom pli larĝe, mi petas` | 文末pleaseタグを `mi petas` に統一 |
+| 4691 | `Mi ŝatus dentpurigadon, bonvolu` | `Mi ŝatus dentpurigadon, mi petas` | 同上 |
+| 4762 | `Mi ŝatus pakaĵon da aspirino` | `Mi ŝatus paketon da aspirino` | 薬の一箱・一包は `paketo` が自然 |
+| 4768 | `Mi ŝatus paroli kun la farmaciisto, bonvolu` | `Mi ŝatus paroli kun la farmaciisto, mi petas` | 文末pleaseタグを `mi petas` に統一 |
+| 4880 | `Plilaŭtigu, bonvolu` | `Plilaŭtigu, mi petas` | 同上 |
+| 4881 | `Mallaŭtigu, bonvolu` | `Mallaŭtigu, mi petas` | 同上 |
+| 4918 | `Mi ŝatus vatitan koverton, bonvolu` | `Mi ŝatus vatitan koverton, mi petas` | 同上 |
+| 4962 | `Ĉe kiu giĉeto estas poŝtrestante?` | `Kiu giĉeto estas por poŝtrestantaj sendaĵoj?` | `poŝtrestante` を郵便物の形容詞句として整理 |
 
 ## 主に維持した候補
 
@@ -116,6 +179,11 @@
 - `doma vino`, `perdi pezon`, `havi abonon`, `fari rendevuon`
 - `deklaracio`, `inkludita`, `fragila`, `poŝtejo`, `doktoro`, `kmera`, `Skajpon`
 - `jaĥto / jaĥtklubo`
+- `elregistriĝi`, `plena pensiono`, `pensia programo`, `centra tribuno`
+- `Bankoko`, `Abu-Dabio`, `Oxford-strato`, `London Kings Cross`
+- `Laŭran`, `Emilin`, `pagmaŝino por parkumado`
+- 単独の `Bonvolu` と `Bonvolu + 不定詞` の正用例
+- `Li laboras sur farmo`、`Ĉu la jaĥto estas asekurita por urĝaj situacioj?`
 
 ## 音声・モバイルデータ
 
@@ -127,6 +195,8 @@
 - `編集ログ/phrases_audio_replacement_generation_20260610_forced_loanwords_round2.csv`
 - `編集ログ/phrases_audio_replacement_generation_20260610_forced_loanwords_round3.csv`
 - `編集ログ/phrases_audio_replacement_generation_20260610_forced_loanwords_final_audit.csv`
+- `編集ログ/phrases_audio_replacement_generation_20260610_forced_loanwords_round5.csv`
+- `編集ログ/phrases_audio_replacement_generation_20260611_grammar_round6.csv`
 
 確認結果:
 
@@ -134,21 +204,33 @@
 - 第2ラウンド: 18件、`voice=spomenka`、全件 `generated`
 - 第3ラウンド: 41件、`voice=spomenka`、全件 `generated`
 - 最終検品: 4件、`voice=spomenka`、全件 `generated`
+- 第5ラウンド: 5件、`voice=spomenka`、全件 `generated`
+- 第6ラウンド: 51件、`voice=spomenka`、全件 `generated`
 - root音声: 5000 WAV
 - スマホ用音声: 5000 WAV
-- `npm run validate:mobile-assets`: passed
+- `npm run validate:mobile-assets`: passed（Drive fallback の新51件 missing / 旧56件 extra は警告）
 - `npm run test:unit`: 69 tests passed
 
 ## Google Drive状態
 
-ユーザーによる追加アップロード・旧重複削除後、`tools/build_drive_audio_manifest.py` でDriveを再読込した結果:
+第6ラウンド反映後に `tools/build_drive_audio_manifest.py` でDriveを再読込した現時点では次の状態:
 
-- Drive上の例文WAV: 5000件
+- Drive上の例文WAV: 5005件
 - mobile data と一致する必要音声: 5000件
-- missing: 0件
-- extra: 0件
+- matched: 4949件
+- missing: 51件
+  - 第6ラウンドで生成した新51音声
+- extra: 56件
+  - 第6ラウンドで置き換えた旧51音声
+  - 第5ラウンド以前からDrive側に残る旧5音声:
+    - `2017_kriza_elirejo`
+    - `2029_en_kazo_de_fajro_uzu_la_sxtuparon`
+    - `2328_urgxa_bremso`
+    - `3255_kia_grandeco_gxi_estas`
+    - `4779_cxu_vi_havas_fotokabinon`
 
-つまり、アプリ用に必要なDrive fallback音声はすべて揃っており、旧重複も残っていない。
+アプリ同梱のローカル音声は root / スマホ用とも5000件で揃っているため通常再生には支障ない。
+Drive fallbackを完全一致に戻すには、第6ラウンドの新51音声をDriveへアップロードし、旧56音声をDrive上から削除する。
 
 ## 変更された主なファイル
 
