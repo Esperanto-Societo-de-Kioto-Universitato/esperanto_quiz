@@ -2084,6 +2084,7 @@ function buildVocabQuestions(settings, rng) {
     pool: group.entries,
     stages: group.stages,
     rng,
+    direction: settings.direction,
   })).filter(Boolean);
 }
 
@@ -2103,11 +2104,14 @@ function buildSentenceQuestions(settings, rng) {
     pool,
     stages: [],
     rng,
+    direction: settings.direction,
   })).filter(Boolean);
 }
 
-function buildQuestionFromEntry({ mode, correct, pool, stages, rng }) {
+function buildQuestionFromEntry({ mode, correct, pool, stages, rng, direction }) {
   const correctTarget = targetText(correct);
+  const normalizedDirection = direction === "ja_to_eo" ? "ja_to_eo" : "eo_to_ja";
+  const correctDisplay = choiceDisplayTextForEntry(correct, normalizedDirection, correctTarget);
   const wrongPool = pool.filter((entry) => (
     entry !== correct
     && entry.eo !== correct.eo
@@ -2116,7 +2120,23 @@ function buildQuestionFromEntry({ mode, correct, pool, stages, rng }) {
   if (wrongPool.length < 3) {
     return null;
   }
-  const options = shuffle([...sample(wrongPool, 3, rng), correct], rng).map((entry) => ({
+  const wrongOptions = [];
+  const seenDisplays = new Set([correctDisplay]);
+  for (const entry of shuffle([...wrongPool], rng)) {
+    const display = choiceDisplayTextForEntry(entry, normalizedDirection);
+    if (!display || seenDisplays.has(display)) {
+      continue;
+    }
+    seenDisplays.add(display);
+    wrongOptions.push(entry);
+    if (wrongOptions.length === 3) {
+      break;
+    }
+  }
+  if (wrongOptions.length < 3) {
+    return null;
+  }
+  const options = shuffle([...wrongOptions, correct], rng).map((entry) => ({
     id: entry.id,
     eo: entry.eo,
     ja: targetText(entry),
@@ -2135,6 +2155,13 @@ function buildQuestionFromEntry({ mode, correct, pool, stages, rng }) {
     answerIndex,
     options,
   };
+}
+
+function choiceDisplayTextForEntry(entry, direction, cachedTargetText = undefined) {
+  if (direction === "ja_to_eo") {
+    return String(entry?.eo || "").trim();
+  }
+  return cachedTargetText === undefined ? targetText(entry) : cachedTargetText;
 }
 
 function renderQuiz() {
@@ -3304,10 +3331,6 @@ function labelForPos(pos) {
 function posSortIndex(pos) {
   const index = POS_ORDER.indexOf(pos);
   return index === -1 ? 999 : index;
-}
-
-function sample(items, count, rng) {
-  return shuffle([...items], rng).slice(0, count);
 }
 
 function shuffle(items, rng) {

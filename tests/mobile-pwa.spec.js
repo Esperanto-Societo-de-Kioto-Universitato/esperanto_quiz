@@ -21,6 +21,38 @@ async function answerRemainingCorrectly(page, scope) {
   throw new Error("Quiz did not complete within the guard limit");
 }
 
+function expectSessionChoicesToBeUnique(session) {
+  const direction = session.settings.direction;
+  for (const [questionIndex, question] of session.questions.entries()) {
+    const labels = question.options.map((option) => direction === "ja_to_eo" ? option.eo : option.ja);
+    expect(
+      new Set(labels).size,
+      `question ${questionIndex} has duplicate labels: ${labels.join(" / ")}`,
+    ).toBe(labels.length);
+  }
+}
+
+async function startDuplicateProneSentenceSession(page, direction) {
+  const appUrl = process.env.MOBILE_APP_URL || "http://127.0.0.1:8765/mobile_app/";
+  await page.goto(appUrl, { waitUntil: "networkidle" });
+  await expect(page.locator("#setupView")).toHaveClass(/is-active/);
+
+  await page.locator("#modeSentence").click();
+  await page.locator("#topicSelect").selectOption("Basic Sentences");
+  await page.locator("#subtopicSelect").selectOption("Saying Hello & Goodbye");
+  await page.locator("#levelChips input").evaluateAll((inputs) => {
+    inputs.forEach((input) => {
+      input.checked = true;
+      input.dispatchEvent(new Event("change", { bubbles: true }));
+    });
+  });
+  await page.locator("#directionSelect").selectOption(direction);
+  await page.locator("#startButton").scrollIntoViewIfNeeded();
+  await page.locator("#startButton").click();
+
+  return page.evaluate(() => JSON.parse(localStorage.getItem("esperanto-choice-mobile:session:v2")));
+}
+
 test("mobile quiz state survives reload", async ({ page }) => {
   const errors = [];
   page.on("console", (message) => {
@@ -112,6 +144,7 @@ test("mobile quiz state survives reload", async ({ page }) => {
 
   const startedSession = await page.evaluate(() => JSON.parse(localStorage.getItem("esperanto-choice-mobile:session:v2")));
   expect(startedSession.settings).not.toHaveProperty("length");
+  expectSessionChoicesToBeUnique(startedSession);
   const answerIndex = startedSession.questions[startedSession.qIndex].answerIndex;
   const wrongIndex = (answerIndex + 1) % startedSession.questions[startedSession.qIndex].options.length;
   await page.locator(`.choice-button[data-index="${wrongIndex}"]`).click();
@@ -163,6 +196,16 @@ test("mobile quiz state survives reload", async ({ page }) => {
 
   expect(errors).toEqual([]);
 });
+
+for (const direction of ["eo_to_ja", "ja_to_eo"]) {
+  test(`mobile sentence questions avoid duplicate displayed choices: ${direction}`, async ({ page }) => {
+    const session = await startDuplicateProneSentenceSession(page, direction);
+    expect(session.settings.mode).toBe("sentence");
+    expect(session.settings.subtopic).toBe("Saying Hello & Goodbye");
+    expect(session.settings.direction).toBe(direction);
+    expectSessionChoicesToBeUnique(session);
+  });
+}
 
 test("mobile app can quiz with Chinese and Korean target translations", async ({ page, browser }) => {
   const appUrl = process.env.MOBILE_APP_URL || "http://127.0.0.1:8765/mobile_app/";
