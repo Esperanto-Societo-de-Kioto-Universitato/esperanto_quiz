@@ -20,3 +20,6 @@ __pycache__/
 # Test artifacts
 test-results/
 playwright-report/
+
+# Local audio replacement backups
+Esperanto例文5000文_収録音声/archived_replaced_audio_*/

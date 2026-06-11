@@ -1,12 +1,12 @@
 ﻿PhraseID,LevelID,LevelName_EN,TopicName_EN,SubtopicName_EN,Esperanto,English,日本語,中文,한국어,Русский язык
 156,2,Beginner 2,Basic Sentences,Saying Hello & Goodbye,Bonan matenon,Good morning.,おはようございます。,早上好。,좋은 아침입니다.,Доброе утро.
-157,1,Beginner 1,Basic Sentences,Saying Hello & Goodbye,Saluton!,Hi!,こんにちは！,你好！,안녕하세요!,Привет!
-158,1,Beginner 1,Basic Sentences,Saying Hello & Goodbye,Ĝis!,Bye!,さようなら！,再见！,안녕히 가세요!,Пока!
+157,1,Beginner 1,Basic Sentences,Saying Hello & Goodbye,Saluton!,Hi!,やあ！,你好！,안녕하세요!,Привет!
+158,1,Beginner 1,Basic Sentences,Saying Hello & Goodbye,Ĝis!,Bye!,じゃあね！,拜拜！,잘 가요!,Пока!
 159,1,Beginner 1,Basic Sentences,Saying Hello & Goodbye,Kiel vi fartas?,How are you?,お元気ですか？,你好吗？,잘 지내고 계신가요?,Как дела?
 160,1,Beginner 1,Basic Sentences,Saying Hello & Goodbye,"Mi fartas bone, dankon","I'm OK, thanks.",元気です、ありがとうございます。,我还好，谢谢。,"괜찮아요, 감사합니다.","Хорошо, спасибо."
 161,4,Intermediate 2,Basic Sentences,Saying Hello & Goodbye,Estas bone vidi vin!,Good to see you!,お会いできてうれしいです！,很高兴见到你！,만나서 반가워요!,Рада вас видеть!
-162,2,Beginner 2,Basic Sentences,Saying Hello & Goodbye,Bonan tagon,Good afternoon.,こんにちは。,下午好。,안녕하세요.,Добрый день.
-163,2,Beginner 2,Basic Sentences,Saying Hello & Goodbye,Bonan vesperon,Good evening.,こんばんは。,晚上好。,안녕하세요.,Добрый вечер.
+162,2,Beginner 2,Basic Sentences,Saying Hello & Goodbye,Bonan tagon,Good afternoon.,こんにちは。,下午好。,좋은 오후입니다.,Добрый день.
+163,2,Beginner 2,Basic Sentences,Saying Hello & Goodbye,Bonan vesperon,Good evening.,こんばんは。,晚上好。,좋은 저녁입니다.,Добрый вечер.
 164,2,Beginner 2,Basic Sentences,Saying Hello & Goodbye,Bonan nokton,Good night.,おやすみなさい。,晚安。,안녕히 주무세요.,Спокойной ночи.
 165,3,Intermediate 1,Basic Sentences,Saying Hello & Goodbye,Ĝis revido!,Goodbye!,さようなら！,再见！,안녕히 가세요!,До свидания!
 166,3,Intermediate 1,Basic Sentences,Saying Hello & Goodbye,Ĝis morgaŭ!,See you tomorrow!,また明日！,明天见！,내일 봐요!,До завтра!
@@ -19,16 +19,16 @@
 173,6,Advanced 1,Basic Sentences,Saying Hello & Goodbye,"Ne tro malbone, dankon","Not too bad, thanks.",まあまあです、ありがとうございます。,还不错，谢谢。,"그렇게 나쁘지 않네요, 감사합니다.","Неплохо, спасибо."
 174,5,Intermediate 3,Basic Sentences,Saying Hello & Goodbye,Mi ĝojas revidi vin,I'm glad to see you again.,またお会いできてうれしいです。,很高兴再次见到你。,다시 만나서 반가워요.,Рад вас снова видеть.
 175,5,Intermediate 3,Basic Sentences,Saying Hello & Goodbye,Mi devas iri,I have to go.,もう行かなくてはいけません。,我得走了。,저는 가봐야 해요.,Мне нужно идти.
-176,5,Intermediate 3,Basic Sentences,Saying Hello & Goodbye,Ĝis revido!,See you later!,また後でね！,回头见！,나중에 봐요!,Увидимся позже!
+176,5,Intermediate 3,Basic Sentences,Saying Hello & Goodbye,Ĝis revido!,See you later!,さようなら！,再见！,안녕히 가세요!,Увидимся позже!
 177,5,Intermediate 3,Basic Sentences,Saying Hello & Goodbye,Mi revenos,I'll come back.,また戻ってきます。,我会回来的。,다시 올게요.,Я вернусь.
 178,7,Advanced 2,Basic Sentences,Saying Hello & Goodbye,Salutu Lukason de mi,Say hi to Lukas for me.,ルーカスによろしく伝えてください。,帮我向卢卡斯问好。,루카스에게 안부 전해 주세요.,Передай Лукасу от меня привет.
 179,7,Advanced 2,Basic Sentences,Saying Hello & Goodbye,Estis agrable paroli kun vi,It was nice talking to you.,お話しできて楽しかったです。,很高兴和你聊天。,이야기 나눌 수 있어서 즐거웠어요.,Было приятно поговорить с тобой.
 180,4,Intermediate 2,Basic Sentences,Saying Hello & Goodbye,Bonvenon!,Welcome!,ようこそ！,欢迎！,환영합니다!,Добро пожаловать!
-181,6,Advanced 1,Basic Sentences,Saying Hello & Goodbye,Ĝis baldaŭ!,See you soon!,またすぐに会いましょう！,回头见！,곧 뵙겠습니다!,До скорого!
+181,6,Advanced 1,Basic Sentences,Saying Hello & Goodbye,Ĝis baldaŭ!,See you soon!,またすぐに会いましょう！,一会儿见！,곧 뵙겠습니다!,До скорого!
 182,6,Advanced 1,Basic Sentences,Saying Hello & Goodbye,Mi tuj revenos!,I will be right back!,すぐ戻ります！,我马上回来！,금방 돌아올게요!,Я скоро вернусь!
 183,9,Expert 1,Basic Sentences,Saying Hello & Goodbye,"Ĉiuokaze, mi parolos kun vi poste","Anyway, I'll talk to you later.",とにかく、また後で話そう。,总之，稍后再和你聊。,"아무튼, 나중에 다시 얘기할게요.","В любом случае, поговорим с тобой позже."
-184,6,Advanced 1,Basic Sentences,Saying Hello & Goodbye,Estis agrable konatiĝi kun vi,It was nice meeting you.,お会いできて嬉しかったです。,很高兴见到你。,만나서 반가웠어요.,Было приятно с вами познакомиться.
-185,7,Advanced 2,Basic Sentences,Saying Hello & Goodbye,Estis bone vidi vin,It was good seeing you.,お会いできてよかったです。,很高兴见到你。,만나서 반가웠어요.,Была рада тебя увидеть.
+184,6,Advanced 1,Basic Sentences,Saying Hello & Goodbye,Estis agrable konatiĝi kun vi,It was nice meeting you.,お会いできて嬉しかったです。,很高兴认识你。,만나서 반가웠어요.,Было приятно с вами познакомиться.
+185,7,Advanced 2,Basic Sentences,Saying Hello & Goodbye,Estis bone vidi vin,It was good seeing you.,お会いできてよかったです。,见到你真好。,만나서 좋았어요.,Была рада тебя увидеть.
 186,9,Expert 1,Basic Sentences,Saying Hello & Goodbye,Mi antaŭĝojas revidi vin,I'm looking forward to seeing you again.,またお会いできるのを楽しみにしています。,我很期待再次见到你。,다시 뵙게 되기를 기대하고 있어요.,С нетерпением жду следующей встречи с вами.
 187,7,Advanced 2,Basic Sentences,Saying Hello & Goodbye,Ni revidiĝos post tri semajnoj,I'll see you in three weeks.,また三週間後に会いましょう。,三周后见。,3주 후에 뵙겠습니다.,Увидимся через три недели.
 188,7,Advanced 2,Basic Sentences,Saying Hello & Goodbye,Kiel vi progresas en via nova laboro?,How are you getting on with your new job?,新しい仕事はどう進んでいますか？,你新工作的进展怎么样？,새로운 직장에는 잘 적응하고 계신가요?,Как вы справляетесь с новой работой?
@@ -41,13 +41,13 @@
 195,2,Beginner 2,Basic Sentences,Good Wishes,Bonan tagon!,Have a nice day!,良い一日をお過ごしください。,祝你今天愉快！,좋은 하루 보내세요!,Хорошего дня!
 196,2,Beginner 2,Basic Sentences,Good Wishes,"Dankon, ankaŭ al vi!","Thanks, you too!",ありがとうございます。あなたもどうぞ！,谢谢，你也是！,"감사합니다, 좋은 하루 보내세요!","Спасибо, и тебе!"
 197,2,Beginner 2,Basic Sentences,Good Wishes,Ĉion plej bonan!,All the best!,ご健闘をお祈りします！,祝一切顺利！,행운을 빕니다!,Всего наилучшего!
-198,2,Beginner 2,Basic Sentences,Good Wishes,Sanon!,Bless you!,お大事に！,保重！,몸조심하세요!,Будь здоров!
+198,2,Beginner 2,Basic Sentences,Good Wishes,Sanon!,Bless you!,お大事に！,长命百岁！,건강하세요!,Будь здоров!
 199,2,Beginner 2,Basic Sentences,Good Wishes,Resaniĝu baldaŭ!,Get well soon!,お大事にしてください。,早日康复！,빨리 쾌차하세요!,Поправляйся скорее!
 200,2,Beginner 2,Basic Sentences,Good Wishes,Je via sano!,Cheers!,乾杯！,干杯！,건배!,Будем здоровы!
 201,2,Beginner 2,Basic Sentences,Good Wishes,Dormu bone!,Sleep well!,おやすみなさい。,晚安，祝你睡个好觉！,편안한 밤 되세요!,Спи крепко!
 202,4,Intermediate 2,Basic Sentences,Good Wishes,Mi ĝojas aŭdi tion,Glad to hear it.,それを聞いてうれしいです。,很高兴听到这个消息。,그렇게 들으니 기쁘네요.,Рад это слышать.
 203,4,Intermediate 2,Basic Sentences,Good Wishes,Bonan vojaĝon!,Enjoy your trip!,良いご旅行を！,旅途愉快！,즐거운 여행 되세요!,Хорошей тебе поездки!
-204,4,Intermediate 2,Basic Sentences,Good Wishes,Bonan amuzon!,Have a good time!,楽しんでください！,玩得开心！,즐거운 시간 보내세요!,Желаю хорошо провести время!
+204,4,Intermediate 2,Basic Sentences,Good Wishes,Bonan amuzon!,Have a good time!,楽しんでください！,祝你玩得愉快！,즐거운 시간 보내세요!,Желаю хорошо провести время!
 205,5,Intermediate 3,Basic Sentences,Good Wishes,Agrablan nokton!,Have a great night!,素敵な夜をお過ごしください。,祝你晚上愉快！,좋은 밤 되세요!,Приятной ночи!
 206,5,Intermediate 3,Basic Sentences,Good Wishes,Bonan semajnfinon!,Have a good weekend!,良い週末をお過ごしください。,周末愉快！,좋은 주말 보내세요!,Хороших выходных!
 207,5,Intermediate 3,Basic Sentences,Good Wishes,Mi deziras al vi sanon,I wish you health.,ご健康をお祈りしています。,祝你健康。,건강하시길 바랍니다.,Желаю тебе здоровья.
@@ -70,7 +70,7 @@
 224,1,Beginner 1,Basic Sentences,Thanks,"Ne, dankon","No, thanks.",いいえ、結構です。,不用了，谢谢。,"아니요, 괜찮아요.","Нет, спасибо."
 225,1,Beginner 1,Basic Sentences,Thanks,Mi ĝojas helpi,Happy to help.,お手伝いできてうれしいです。,很乐意帮忙。,기꺼이 도와드릴게요.,Рад помочь.
 226,2,Beginner 2,Basic Sentences,Thanks,Multan dankon,Thank you very much.,どうもありがとうございます。,非常感谢。,정말 감사합니다.,Большое спасибо.
-227,2,Beginner 2,Basic Sentences,Thanks,Nedankinde,Don't mention it.,どういたしまして。,不用谢。,별말씀을요.,Не стоит благодарности.
+227,2,Beginner 2,Basic Sentences,Thanks,Nedankinde,Don't mention it.,どういたしまして。,不客气。,천만에요.,Не стоит благодарности.
 228,2,Beginner 2,Basic Sentences,Thanks,Tio estas tre afabla de vi,That's very kind of you.,ご親切にありがとうございます。,你真是太好了。,정말 친절하시네요.,Это очень мило с твоей стороны.
 229,3,Intermediate 1,Basic Sentences,Thanks,"Dankon, ke vi venis",Thanks for coming.,来てくれてありがとう。,感谢您的到来。,와 주셔서 감사합니다.,"Спасибо, что пришёл."
 230,3,Intermediate 1,Basic Sentences,Thanks,Dankon pro via gastamo,Thanks for your hospitality.,ご親切にしていただき、ありがとうございました。,感谢您的热情款待。,환대해 주셔서 감사합니다.,Спасибо за гостеприимство.
@@ -84,7 +84,7 @@
 238,5,Intermediate 3,Basic Sentences,Thanks,Dankon pro via komplimento,Thank you for your compliment.,お褒めいただき、ありがとうございます。,谢谢你的夸奖。,칭찬해 주셔서 감사합니다.,Спасибо вам за комплимент.
 239,5,Intermediate 3,Basic Sentences,Thanks,Mi estos eterne dankema al vi,I'll forever be grateful.,心から感謝し続けます。,我会永远心怀感激。,영원히 감사할 거예요.,Я буду тебе бесконечно благодарен.
 240,5,Intermediate 3,Basic Sentences,Thanks,"Tio estis la plej malgranda afero, kiun mi povis fari",It was the least I could do.,それは私にできるせめてものことでした。,这是我应该做的。,제가 할 수 있는 최소한의 일이었어요.,"Это было самое малое, что я мог сделать."
-241,5,Intermediate 3,Basic Sentences,Thanks,Estas plezuro,It's a pleasure.,どういたしまして。,不客气。,별말씀을요.,Не стоит благодарности.
+241,5,Intermediate 3,Basic Sentences,Thanks,Estas plezuro,It's a pleasure.,お役に立てて嬉しいです。,我的荣幸。,도움이 되어 기뻐요.,Не стоит благодарности.
 242,6,Advanced 1,Basic Sentences,Thanks,Mi ne povas sufiĉe danki vin,I can't thank you enough.,感謝してもしきれません。,我真是感激不尽。,아무리 감사해도 모자랍니다.,Я даже не знаю как вас благодарить.
 243,6,Advanced 1,Basic Sentences,Thanks,"Kontraŭe: estas mi, kiu devus danki vin!",On the contrary: I should be thanking you!,むしろ、こちらこそお礼を言うべきです！,恰恰相反，应该是我感谢你才对！,오히려 제가 감사드려야죠!,"Наоборот, это мне следует вас благодарить!"
 244,6,Advanced 1,Basic Sentences,Thanks,Mi dankas pro via tempo,I appreciate your time.,お時間をいただき、ありがとうございます。,感谢您的宝贵时间。,시간 내주셔서 감사합니다.,Спасибо за уделённое время.
@@ -107,21 +107,21 @@
 261,1,Beginner 1,Basic Sentences,Apologies,Pardonu!,Excuse me.,失礼します。,不好意思。,실례합니다.,Извините!
 262,1,Beginner 1,Basic Sentences,Apologies,Neniu problemo,No problem.,問題ありません。,没问题。,문제없어요.,Никаких проблем.
 263,3,Intermediate 1,Basic Sentences,Apologies,Bonvolu pardoni min,Please forgive me.,どうかお許しください。,请原谅我。,용서해 주세요.,"Пожалуйста, прости меня."
-264,3,Intermediate 1,Basic Sentences,Apologies,Nenio grava!,Never mind!,気にしないで！,没关系！,신경 쓰지 마세요!,Ничего страшного!
+264,3,Intermediate 1,Basic Sentences,Apologies,Nenio grava!,Never mind!,気にしないで！,不要紧！,신경 쓰지 마세요!,Ничего страшного!
 265,3,Intermediate 1,Basic Sentences,Apologies,"Pardonu, mi malfruas",Sorry I'm late.,遅れてしまい、申し訳ありません。,对不起，我来晚了。,늦어서 죄송해요.,"Прости, я опаздываю."
 266,3,Intermediate 1,Basic Sentences,Apologies,"Pardonu, ke mi ĝenas vin",Sorry to bother you.,お忙しいところ失礼いたします。,不好意思打扰了。,불편을 드려 죄송합니다.,"Извини, что беспокою."
 267,4,Intermediate 2,Basic Sentences,Apologies,"Ne zorgu, mi petas",Please don't worry.,どうかご心配なさらないでください。,请别担心。,걱정하지 마세요.,"Пожалуйста, не волнуйся."
 268,4,Intermediate 2,Basic Sentences,Apologies,Ne ofendiĝu,No offence.,気を悪くしないでください。,无意冒犯。,기분 나쁘게 들리지 않았으면 해요.,Не обижайтесь.
 269,4,Intermediate 2,Basic Sentences,Apologies,Pardonu min,I apologise.,申し訳ありません。,对不起。,죄송합니다.,Прости.
 270,4,Intermediate 2,Basic Sentences,Apologies,"Nu, ni forgesu pri tio","Well, let's forget it.",まあ、もうその話はやめましょう。,算了吧。,"음, 그냥 잊어버립시다.","Ну, давай забудем об этом."
-271,5,Intermediate 3,Basic Sentences,Apologies,Pardonu pro la prokrasto,Sorry for the delay.,お待たせして申し訳ありません。,抱歉耽搁了。,늦어서 죄송합니다.,Извините за задержку.
+271,5,Intermediate 3,Basic Sentences,Apologies,Pardonu pro la prokrasto,Sorry for the delay.,遅れて申し訳ありません。,抱歉耽搁了。,늦어서 죄송합니다.,Извините за задержку.
 272,5,Intermediate 3,Basic Sentences,Apologies,"Pardonu, mi ne havas tempon","Sorry, I don't have time.",ごめんなさい、時間がありません。,对不起，我没有时间。,죄송하지만 시간이 없어요.,"Извините, у меня нет времени."
 273,6,Advanced 1,Basic Sentences,Apologies,"Pardonu, mi ne povas plu paroli","Sorry, I can't talk any longer.",ごめん、もうこれ以上話せないんだ。,抱歉，我不能再聊了。,죄송하지만 더 이상 대화할 수 없을 것 같아요.,"Извините, я не могу больше говорить."
 274,6,Advanced 1,Basic Sentences,Apologies,"Pardonu, nenio plu restas","Sorry, there is nothing left.",申し訳ありませんが、もう残っていません。,抱歉，已经没有剩下的了。,"죄송하지만, 남아 있는 것이 없습니다.","Извини, больше ничего не осталось."
 275,6,Advanced 1,Basic Sentences,Apologies,Ĉu mi ĝenas vin?,Am I disturbing you?,お邪魔していませんか？,我打扰到你了吗？,제가 방해하고 있나요?,Я вам не мешаю?
 276,5,Intermediate 3,Basic Sentences,Apologies,Mi ne tion celis,I didn't mean that.,そんなつもりじゃなかったんです。,我不是那个意思。,그런 뜻이 아니었어요.,Я не то имела в виду.
 277,5,Intermediate 3,Basic Sentences,Apologies,Tio estas mia kulpo,That's my fault.,それは私のせいです。,这是我的错。,그건 제 잘못이에요.,Это моя вина.
-278,6,Advanced 1,Basic Sentences,Apologies,Mi petas pardonon,I beg your pardon.,申し訳ありません。,请您原谅。,실례합니다.,Прошу прощения.
+278,6,Advanced 1,Basic Sentences,Apologies,Mi petas pardonon,I beg your pardon.,お詫び申し上げます。,请您原谅。,사과드립니다.,Прошу прощения.
 279,8,Advanced 3,Basic Sentences,Apologies,Ĉu mi povas ĝeni vin momenton?,May I bother you for a moment?,少しお時間をいただいてもよろしいでしょうか。,能打扰您一下吗？,잠시 시간 좀 내주실 수 있을까요?,Могу я вас на секунду побеспокоить?
 280,8,Advanced 3,Basic Sentences,Apologies,"Pardonu, sed mi devas nun foriri","Sorry, but I've got to dash now.",ごめん、もう行かなきゃ。,不好意思，我现在得赶紧走了。,죄송하지만 이제 가봐야겠어요.,"Прости, но сейчас мне нужно бежать."
 281,8,Advanced 3,Basic Sentences,Apologies,"Pardonu, mi hazarde aŭdis vian konversacion","Sorry, I overheard your conversation.",申し訳ありません、お話が聞こえてしまいました。,不好意思，我无意中听到了你们的谈话。,"죄송해요, 우연히 대화를 듣게 됐어요.","Извините, я случайно услышала ваш разговор."
@@ -154,7 +154,7 @@
 308,6,Advanced 1,Basic Sentences,Instructions,Atentu la hundon,Beware of the dog,犬にご注意ください,小心狗,개를 조심하세요.,"Осторожно, собака"
 309,6,Advanced 1,Basic Sentences,Instructions,Ne paŝu sur la gazonon!,Keep off the grass,芝生に入らないでください,请勿踩踏草坪,잔디밭에 들어가지 마세요.,По газону не ходить
 310,7,Advanced 2,Basic Sentences,Instructions,"Post vi, sinjoro Smith!","After you, Mr Smith!",お先にどうぞ、スミスさん。,您请先，史密斯先生！,"먼저 가시죠, 스미스 씨!","После вас, мистер Смит!"
-311,7,Advanced 2,Basic Sentences,Instructions,Atendu momenton,Hang on a minute.,ちょっと待ってください。,等一下。,잠깐만요.,Подожди минутку.
+311,7,Advanced 2,Basic Sentences,Instructions,Atendu momenton,Hang on a minute.,ちょっと待ってください。,等一下。,잠시만요.,Подожди минутку.
 312,7,Advanced 2,Basic Sentences,Instructions,Ne rapidu,Take your time.,ごゆっくりどうぞ。,请慢慢来。,천천히 하세요.,Не торопитесь.
 313,6,Advanced 1,Basic Sentences,Instructions,Ne nervozu,Don't be nervous.,緊張しないでください。,别紧张。,긴장하지 마세요.,Не нервничай.
 314,9,Expert 1,Basic Sentences,Instructions,"Rigardu, kien vi iras!",Watch where you're going!,前をちゃんと見て歩いて！,看路啊！,앞을 잘 보고 다니세요!,"Смотри, куда идёшь!"
@@ -186,8 +186,8 @@
 340,5,Intermediate 3,Basic Sentences,Short Questions & Answers,Mi ne scias,I don't know.,わかりません。,我不知道。,잘 모르겠어요.,Я не знаю.
 341,5,Intermediate 3,Basic Sentences,Short Questions & Answers,Mi scias,I know.,知ってるよ。,我知道。,알고 있어요.,Я знаю.
 342,5,Intermediate 3,Basic Sentences,Short Questions & Answers,Ĉu ĉio en ordo?,Is everything OK?,大丈夫ですか？,一切都还好吗？,모든 게 괜찮으신가요?,Всё в порядке?
-343,5,Intermediate 3,Basic Sentences,Short Questions & Answers,Bone,It's OK.,大丈夫です。,没关系。,괜찮아요.,Хорошо.
-344,5,Intermediate 3,Basic Sentences,Short Questions & Answers,"Jes, certe","Yes, sure.",はい、もちろんです。,好的，没问题。,"네, 물론입니다.","Да, конечно."
+343,5,Intermediate 3,Basic Sentences,Short Questions & Answers,Bone,It's OK.,承知しました。,好的。,알겠습니다.,Хорошо.
+344,5,Intermediate 3,Basic Sentences,Short Questions & Answers,"Jes, certe","Yes, sure.",はい、もちろんです。,是的，当然。,"네, 물론입니다.","Да, конечно."
 345,6,Advanced 1,Basic Sentences,Short Questions & Answers,Kial ne?,Why not?,なぜダメなの？,为什么不呢？,왜 안 되죠?,Почему бы и нет?
 346,6,Advanced 1,Basic Sentences,Short Questions & Answers,Ne malbone,Not bad.,悪くないね。,还不错。,나쁘지 않아요.,Неплохо.
 347,6,Advanced 1,Basic Sentences,Short Questions & Answers,Ankoraŭ ne,Not yet.,まだです。,还没有。,아직 아니에요.,Ещё нет.
@@ -232,7 +232,7 @@
 386,5,Intermediate 3,Basic Sentences,Congratulations,Feliĉan Tagon de Sankta Valenteno!,Happy Valentine's Day!,ハッピーバレンタインデー！,情人节快乐！,해피 발렌타인 데이!,С Днём святого Валентина!
 387,5,Intermediate 3,Basic Sentences,Congratulations,Feliĉan Patrintagon!,Happy Mother's Day!,母の日おめでとう！,母亲节快乐！,어머니의 날 축하드려요!,С Днём матери!
 388,5,Intermediate 3,Basic Sentences,Congratulations,Feliĉan Divalon!,Happy Diwali to you!,ディワリおめでとうございます！,祝你排灯节快乐！,행복한 디왈리 보내세요!,Поздравляю тебя с Дивали!
-389,4,Intermediate 2,Basic Sentences,Congratulations,Permesu al mi gratuli vin,Let me congratulate you.,おめでとうございます。,让我祝贺你。,축하드립니다.,Позвольте вас поздравить.
+389,4,Intermediate 2,Basic Sentences,Congratulations,Permesu al mi gratuli vin,Let me congratulate you.,お祝いを申し上げます。,让我祝贺你。,축하드립니다.,Позвольте вас поздравить.
 390,6,Advanced 1,Basic Sentences,Congratulations,Gratulon pro via diplomiĝo!,Congratulations on your graduation!,ご卒業おめでとうございます！,祝贺你毕业了！,졸업을 진심으로 축하합니다!,Поздравляю с окончанием университета!
 391,6,Advanced 1,Basic Sentences,Congratulations,Gratulon pro la nova laborposteno!,Congratulations on getting the job!,就職おめでとうございます！,恭喜你找到新工作！,취업을 축하해요!,Поздравляю с приёмом на работу!
 392,6,Advanced 1,Basic Sentences,Congratulations,Gratulon pro via novnaskito,Congratulations on your new baby.,ご出産おめでとうございます。,恭喜你喜获新生宝宝。,아기의 탄생을 진심으로 축하드립니다.,Поздравляю с новорождённым.
@@ -313,8 +313,8 @@
 467,1,Beginner 1,General Conversation,Agreeing & Disagreeing,Mi konsentas kun vi,I agree with you.,あなたに同意します。,我同意你的看法。,저도 동의합니다.,Я согласна с тобой.
 468,1,Beginner 1,General Conversation,Agreeing & Disagreeing,Mi malkonsentas,I disagree.,私はそうは思いません。,我不同意。,동의하지 않습니다.,Я не согласен.
 469,1,Beginner 1,General Conversation,Agreeing & Disagreeing,Vi pravas,You are right.,おっしゃる通りです。,你说得对。,맞아요.,Ты права.
-470,1,Beginner 1,General Conversation,Agreeing & Disagreeing,Tio estas vera,That's true.,その通りです。,确实如此。,맞아요.,Это правда.
-471,2,Beginner 2,General Conversation,Agreeing & Disagreeing,Ĉu vi ne konsentas?,Don't you agree?,そう思いませんか？,你不觉得吗？,동의하지 않으세요?,Разве ты не согласна?
+470,1,Beginner 1,General Conversation,Agreeing & Disagreeing,Tio estas vera,That's true.,その通りです。,确实如此。,그건 사실이에요.,Это правда.
+471,2,Beginner 2,General Conversation,Agreeing & Disagreeing,Ĉu vi ne konsentas?,Don't you agree?,同感ではありませんか？,你不同意吗？,동의하지 않으세요?,Разве ты не согласна?
 472,2,Beginner 2,General Conversation,Agreeing & Disagreeing,Mi tute konsentas,I entirely agree.,全く同感です。,我完全同意。,전적으로 동의합니다.,Я полностью согласна.
 473,2,Beginner 2,General Conversation,Agreeing & Disagreeing,Vi tiel pravas,You are so right.,本当にその通りですね。,你说得太对了。,정말 맞는 말이에요.,Ты так права.
 474,4,Intermediate 2,General Conversation,Agreeing & Disagreeing,Ĉu vi ne pensas tiel?,Don't you think so?,そう思いませんか？,你不觉得吗？,그렇지 않나요?,Разве ты так не думаешь?
@@ -424,7 +424,7 @@
 578,4,Intermediate 2,General Conversation,Expressing Feelings,Mi maltrankvilas,I'm worried.,心配しています。,我有点担心。,걱정돼요.,Я обеспокоен.
 579,4,Intermediate 2,General Conversation,Expressing Feelings,Mi koleras,I'm angry.,腹が立っている。,我很生气。,화가 나요.,Я зол.
 580,5,Intermediate 3,General Conversation,Expressing Feelings,Mi ne certas,I'm not sure.,はっきりしません。,我不太确定。,잘 모르겠어요.,Я не уверен.
-581,6,Advanced 1,General Conversation,Expressing Feelings,Mi hontas,I'm ashamed.,本当に恥ずかしいです。,我感到很羞愧。,창피해요.,Мне стыдно.
+581,6,Advanced 1,General Conversation,Expressing Feelings,Mi hontas,I'm ashamed.,本当に恥ずかしいです。,我感到很羞愧。,부끄러워요.,Мне стыдно.
 582,5,Intermediate 3,General Conversation,Expressing Feelings,Mi malamas vin,I hate you.,あなたのことが大嫌いです。,我讨厌你。,당신을 미워해요.,Я тебя ненавижу.
 583,5,Intermediate 3,General Conversation,Expressing Feelings,Mia amiko estas ŝokita,My friend is shocked.,友人はとても驚いています。,我的朋友很震惊。,제 친구가 충격을 받았어요.,Мой друг шокирован.
 584,5,Intermediate 3,General Conversation,Expressing Feelings,Ĉu vi ne ŝatas Laŭran?,Don't you like Laura?,ローラのこと、好きじゃないの？,你不喜欢劳拉吗？,로라를 좋아하지 않으세요?,Разве тебе не нравится Лаура?
@@ -497,7 +497,7 @@
 651,1,Beginner 1,General Conversation,Opinions,Ĝi estas malbela,It's ugly.,醜いです。,很难看。,못생겼어요.,Это некрасиво.
 652,2,Beginner 2,General Conversation,Opinions,Estas interese,It's interesting.,面白いですね。,很有意思。,재미있네요.,Это интересно.
 653,2,Beginner 2,General Conversation,Opinions,Estas enuige,It's boring.,退屈だ。,很无聊。,지루해요.,Это скучно.
-654,2,Beginner 2,General Conversation,Opinions,Estas mirinde,It's amazing.,すごいですね。,太棒了。,정말 놀라워요.,Это потрясающе.
+654,2,Beginner 2,General Conversation,Opinions,Estas mirinde,It's amazing.,すごいですね。,太神奇了。,정말 놀라워요.,Это потрясающе.
 655,2,Beginner 2,General Conversation,Opinions,Tio estas naŭza,It's disgusting.,気持ち悪い。,太恶心了。,정말 역겨워요.,Это отвратительно.
 656,3,Intermediate 1,General Conversation,Opinions,Ĉu ĉi tiu loko ne estas mirinda?,Isn't this place fantastic?,ここ、本当に素敵じゃない？,这个地方是不是很棒？,여기 정말 환상적이지 않아요?,Разве это место не фантастическое?
 657,3,Intermediate 1,General Conversation,Opinions,"Mi pensas, ke jes",I think so.,そう思います。,我是这么认为的。,그렇게 생각해요.,"Думаю, да."
@@ -541,7 +541,7 @@
 695,10,Expert 2,General Conversation,Opinions,"Nu, mia propra opinio estas, ke li amas vin","Well, my own opinion is that he loves you.",私の考えでは、彼はあなたのことを愛していると思います。,我个人认为，他是爱你的。,제 생각에는 그가 당신을 사랑하는 것 같아요.,"Ну, по моему мнению, он тебя любит."
 696,10,Expert 2,General Conversation,Opinions,"Ŝajnas al mi, ke li estas el Usono",It seems to me that he is from the United States.,彼はアメリカ出身のように思います。,在我看来，他好像是来自美国。,제 생각에는 그는 미국 출신인 것 같아요.,"Мне кажется, что он из Соединённых Штатов."
 697,10,Expert 2,General Conversation,Opinions,"Mi kredas, ke teknologio plibonigas la vivon",It is my belief that technology makes life better.,私は、テクノロジーによって生活はより良くなると考えています。,我相信科技让生活变得更美好。,저는 기술이 삶을 더 나아지게 만든다고 믿어요.,"Я убеждена, что техника делает жизнь лучше."
-698,1,Beginner 1,Emergencies,Emergency Situations,Helpon!,Help!,助けて！,救命！,도와주세요!,На помощь!
+698,1,Beginner 1,Emergencies,Emergency Situations,Helpon!,Help!,助けて！,救命！,살려 주세요!,На помощь!
 699,1,Beginner 1,Emergencies,Emergency Situations,Kuru!,Run!,走って！,快跑！,뛰어요!,Беги!
 700,1,Beginner 1,Emergencies,Emergency Situations,Fajro!,Fire!,火事だ！,着火了！,불이야!,Пожар!
 701,1,Beginner 1,Emergencies,Emergency Situations,Estu singarda!,Be careful!,気をつけて！,小心！,조심하세요!,Будьте осторожны!
@@ -1000,7 +1000,7 @@
 1154,9,Expert 1,Making Friends,Arranging to Meet,"Ĉu ni povas aranĝi tion iom pli malfrue, ekzemple je la 16-a horo?","Can we make it a bit later, say 4 p.m.?",もう少し遅い時間にして、例えば午後4時にするのはどうでしょうか？,我们能不能稍微晚一点，比如下午四点？,"조금 더 늦게, 예를 들어 오후 4시로 할 수 있을까요?","Мы можем сделать это чуть позже, скажем, в 4 часа дня?"
 1155,10,Expert 2,Making Friends,Arranging to Meet,"Sciigu min, se vi povos veni",Let me know if you can make it.,来られるかどうか教えてください。,能来的话请告诉我。,참석 가능하신지 알려주세요.,"Дай мне знать, если ты придёшь."
 1156,10,Expert 2,Making Friends,Arranging to Meet,"Sinjoroj, ni povas ludi partion de golfo","Gentlemen, we can play a round of golf.",皆さん、ゴルフを楽しんでみてはいかがでしょうか。,先生们，我们可以打一场高尔夫。,"신사 여러분, 골프 한 판 즐기시는 건 어떠세요?","Господа, мы можем сыграть партию в гольф."
-1157,1,Beginner 1,Making Friends,Accepting  & Declining,Certe,Sure.,いいですよ。,好的。,"네, 알겠습니다.",Конечно.
+1157,1,Beginner 1,Making Friends,Accepting  & Declining,Certe,Sure.,いいですよ。,当然。,"네, 알겠습니다.",Конечно.
 1158,1,Beginner 1,Making Friends,Accepting  & Declining,"Pardonu, mi ne povas","Sorry, I can't.",申し訳ありませんが、できません。,抱歉，我做不到。,죄송하지만 할 수 없습니다.,"Прости, не могу."
 1159,1,Beginner 1,Making Friends,Accepting  & Declining,Bone!,All right!,了解しました！,好的！,알겠습니다!,Ладно!
 1160,2,Beginner 2,Making Friends,Accepting  & Declining,Sonas bone,Sounds good.,いいですね。,听起来不错。,좋아요.,Хорошо.
@@ -1492,7 +1492,7 @@
 1646,7,Advanced 2,Jobs,At the Workplace,Mi lasis la dosieron sur via skribotablo,I've left the file on your desk.,ファイルはあなたの机の上に置いておきました。,我把文件放在你桌上了。,파일을 책상 위에 두고 갔어요.,Я оставил бумаги у вас на столе.
 1647,9,Expert 1,Jobs,At the Workplace,Bonvolu faksi ĉi tion al nia oficejo,Please fax this to our office.,こちらを弊社宛にファックスしてください。,请把这个传真到我们办公室。,이 문서를 저희 사무실로 팩스 보내주세요.,"Пожалуйста, отправьте это по факсу в наш офис."
 1648,9,Expert 1,Jobs,At the Workplace,Li nun estas kun kliento,He's with a customer at the moment.,ただいまお客様の対応中です。,他现在正在接待客户。,지금은 고객과 함께 있습니다.,Он сейчас с клиентом.
-1649,10,Expert 2,Jobs,At the Workplace,Mi revenos al vi post momento,I'll be with you in a moment.,少々お待ちください。,我马上就来。,잠시만 기다려 주세요.,Вернусь к вам через секунду.
+1649,10,Expert 2,Jobs,At the Workplace,Mi revenos al vi post momento,I'll be with you in a moment.,すぐに参ります。,我马上就来。,잠시 후에 다시 오겠습니다.,Вернусь к вам через секунду.
 1650,10,Expert 2,Jobs,At the Workplace,La limtempo por liveri la varojn finiĝas,The deadline for delivering the goods is expiring.,商品の納品期限が切れます。,货物的交付期限已到。,상품의 납기일이 만료됩니다.,Срок доставки товаров истекает.
 1651,10,Expert 2,Jobs,At the Workplace,"Mi ĝojas informi vin, ke mi havas solvon por vi",I'm happy to tell you that I've got a solution for you.,あなたのために解決策が見つかったことをお伝えできて嬉しいです。,很高兴告诉你，我已经为你找到了解决办法。,해결책을 찾아서 기쁘게 말씀드릴 수 있게 되었어요.,"Рада сообщить вам, что у меня есть для вас решение."
 1652,10,Expert 2,Jobs,At the Workplace,"Persone, mi kredas je ŝia strategio","Personally, I believe in her strategy.",個人的には、彼女の戦略を信頼しています。,我个人相信她的策略。,개인적으로 저는 그녀의 전략을 믿어요.,Лично я верю в её стратегию.
@@ -1766,7 +1766,7 @@
 1920,3,Intermediate 1,Travel,Excursions,Ĉu manĝoj estas inkluzivitaj en la prezo?,Are meals included in the price?,食事は含まれていますか？,包含餐食吗？,식사가 포함되어 있나요?,Питание включено в стоимость?
 1921,8,Advanced 3,Travel,Excursions,Mi ŝatus grandigi ĉi tiujn fotojn,I would like these photographs enlarged.,これらの写真を引き伸ばしていただきたいのですが。,我想把这些照片放大。,이 사진들을 확대해 주세요.,Я бы хотела увеличить эти фотографии.
 1922,4,Intermediate 2,Travel,Excursions,Kiam estos pretaj la fotoj?,When will the photos be ready?,写真はいつ出来上がりますか？,照片什么时候能准备好？,사진은 언제 준비되나요?,Когда будут готовы фотографии?
-1923,4,Intermediate 2,Travel,Excursions,Ĉu estas iuj ekskursoj?,Are there any excursions?,何か観光ツアーはありますか？,有观光游吗？,관광 투어가 있나요?,Есть ли какие-нибудь экскурсии?
+1923,4,Intermediate 2,Travel,Excursions,Ĉu estas iuj ekskursoj?,Are there any excursions?,ツアーはありますか？,有导览团吗？,투어가 있나요?,Есть ли какие-нибудь экскурсии?
 1924,4,Intermediate 2,Travel,Excursions,Jen la listo de ekskursoj,Here is the list of excursions.,こちらが観光ツアーの一覧です。,以下是游览项目清单。,여기 투어 목록입니다.,Вот список экскурсий.
 1925,4,Intermediate 2,Travel,Excursions,Pri kio vi interesiĝas?,What are you interested in?,ご興味のあることは何ですか？,你对什么感兴趣？,어떤 것에 관심이 있으신가요?,Чем вы интересуетесь?
 1926,4,Intermediate 2,Travel,Excursions,Mi ŝatus rezervi vojaĝon al Berlino,I'd like to book a trip to Berlin.,ベルリンへの旅行を予約したいのですが。,我想预订一次去柏林的旅行。,베를린으로 여행을 예약하고 싶어요.,Я бы хотела забронировать поездку в Берлин.
@@ -1865,7 +1865,7 @@
 2019,6,Advanced 1,Plane,Checking in,Mia aviokompanio estas Lufthansa,My airline is Lufthansa.,私が利用する航空会社はルフトハンザです。,我的航空公司是汉莎航空。,저는 루프트한자 항공을 이용합니다.,"Моя авиакомпания - ""Люфтганза""."
 2020,10,Expert 2,Plane,Checking in,Ĉu vi havas vian rezervonumeron?,Have you got your booking reference?,ご予約番号はお持ちですか？,您有预订编号吗？,예약 번호를 가지고 계신가요?,У вас есть номер бронирования?
 2021,10,Expert 2,Plane,Checking in,Jen mia rezervonumero,Here's my booking reference.,こちらが私の予約番号です。,这是我的预订编号。,여기 제 예약 번호입니다.,Вот мой номер бронирования.
-2022,7,Advanced 2,Plane,Checking in,"Ĉu mi povas vidi vian pasporton, mi petas?","May I see your passport, please?",パスポートを拝見してもよろしいでしょうか。,请出示您的护照。,여권을 보여주시겠어요?,"Могу я посмотреть ваш паспорт, пожалуйста?"
+2022,7,Advanced 2,Plane,Checking in,"Ĉu mi povas vidi vian pasporton, mi petas?","May I see your passport, please?",パスポートを拝見してもよろしいでしょうか。,我可以看一下您的护照吗？,여권을 보여주시겠어요?,"Могу я посмотреть ваш паспорт, пожалуйста?"
 2023,8,Advanced 3,Plane,Checking in,De kiu pordego foriras ĉi tiu flugo?,What gate does this flight leave from?,この便はどのゲートから出発しますか？,这趟航班是从哪个登机口出发的？,이 비행기는 어느 탑승구에서 출발하나요?,Из какого выхода осуществляется посадка на этот рейс?
 2024,8,Advanced 3,Plane,Checking in,Bonvolu tuj iri al elirejo numero 1,Please go now to gate number 1.,ただいま1番ゲートへお進みください。,请现在前往1号登机口。,지금 1번 게이트로 이동해 주세요.,"Пожалуйста, немедленно пройдите к выходу номер 1."
 2025,8,Advanced 3,Plane,Checking in,Ĉu ĉi tiu flugo foriros ĝustatempe?,Will this flight leave on time?,この便は定刻通りに出発しますか？,这趟航班会准时起飞吗？,이 비행기는 제시간에 출발하나요?,Этот рейс отправится вовремя?
@@ -2209,7 +2209,7 @@
 2363,8,Advanced 3,Car,Road Signs,Rapidlimo,Speed limit,制限速度,限速,제한 속도,Ограничение максимальной скорости
 2364,8,Advanced 3,Car,Road Signs,Eniro malpermesita,No entry,進入禁止,禁止驶入,진입 금지,Въезд запрещён
 2365,8,Advanced 3,Car,Road Signs,Vojo fermita,Road closed,通行止め,道路封闭,도로 통제,Проезд запрещён
-2366,8,Advanced 3,Car,Road Signs,Halto malpermesita,No stopping,駐停車禁止,禁止停车,정차 금지,Остановка запрещена
+2366,8,Advanced 3,Car,Road Signs,Halto malpermesita,No stopping,駐停車禁止,禁止临时停车,정차 금지,Остановка запрещена
 2367,6,Advanced 1,Car,Road Signs,Buskoridoro,Bus lane,バス専用レーン,公交专用道,버스 전용차로,Полоса общественного транспорта
 2368,6,Advanced 1,Car,Road Signs,Cedu vojon,Give way,道を譲る,让行,양보하세요,Уступи дорогу
 2369,9,Expert 1,Car,Road Signs,Preterpasu maldekstre,Keep left,左側をお通りください,请靠左行驶,좌측으로 이동하세요,Объезд препятствия слева
@@ -2788,7 +2788,7 @@
 2942,1,Beginner 1,Restaurant & Pub,Ordering Drinks,Kun citrono,With lemon.,レモン入りで。,加柠檬。,레몬을 넣어서.,С лимоном.
 2943,1,Beginner 1,Restaurant & Pub,Ordering Drinks,Ĉu tio estas ĉio?,Is that all?,以上でよろしいでしょうか。,就这些吗？,그게 전부인가요?,Это всё?
 2944,1,Beginner 1,Restaurant & Pub,Ordering Drinks,"Jes, tio estas ĉio por nun","Yes, that's all for now.",はい、今のところは以上です。,好的，目前就这些。,"네, 지금은 이게 전부입니다.","Да, пока всё."
-2945,1,Beginner 1,Restaurant & Pub,Ordering Drinks,Ĉu mi povas proponi al vi trinkaĵon?,May I offer you a drink?,お飲み物はいかがですか？,要给您来点饮料吗？,음료 한 잔 드릴까요?,Я могу предложить вам напиток?
+2945,1,Beginner 1,Restaurant & Pub,Ordering Drinks,Ĉu mi povas proponi al vi trinkaĵon?,May I offer you a drink?,お飲み物をお持ちしましょうか？,要给您来点饮料吗？,음료 한 잔 드릴까요?,Я могу предложить вам напиток?
 2946,2,Beginner 2,Restaurant & Pub,Ordering Drinks,"Sukon, mi petas","A juice, please.",ジュースをお願いします。,请给我一杯果汁。,주스 한 잔 주세요.,"Сок, пожалуйста."
 2947,2,Beginner 2,Restaurant & Pub,Ordering Drinks,"Du bierojn, mi petas","Two beers, please.",ビールを二つお願いします。,请来两杯啤酒。,맥주 두 잔 주세요.,"Два пива, пожалуйста."
 2948,2,Beginner 2,Restaurant & Pub,Ordering Drinks,Mi ŝatus kafon,I would like a coffee.,コーヒーをお願いします。,我想要一杯咖啡。,커피 한 잔 주세요.,Я бы хотела чашку кофе.
@@ -2798,7 +2798,7 @@
 2952,3,Intermediate 1,Restaurant & Pub,Ordering Drinks,Kun gaso aŭ sen?,Still or sparkling?,炭酸入りと炭酸なし、どちらになさいますか？,要普通水还是气泡水？,"탄산수로 드릴까요, 아니면 일반 생수로 드릴까요?",Без газа или с газом?
 2953,3,Intermediate 1,Restaurant & Pub,Ordering Drinks,"Gasitan akvon, mi petas","A sparkling water, please.",炭酸水をお願いします。,请来一杯气泡水。,탄산수 한 잔 주세요.,"Воду с газом, пожалуйста."
 2954,3,Intermediate 1,Restaurant & Pub,Ordering Drinks,"Akvon sen gaso, mi petas","A still water, please.",炭酸なしの水をお願いします。,请给我一杯不带气的水。,탄산 없는 물 한 잔 주세요.,"Воду без газа, пожалуйста."
-2955,3,Intermediate 1,Restaurant & Pub,Ordering Drinks,Bonvolu montri al mi la vinkarton,Please show me the wine list.,ワインリストを見せていただけますか。,请给我看一下酒单。,와인 리스트를 보여주세요.,"Пожалуйста, покажите мне винную карту."
+2955,3,Intermediate 1,Restaurant & Pub,Ordering Drinks,Bonvolu montri al mi la vinkarton,Please show me the wine list.,ワインリストを見せてください。,请给我看一下酒单。,와인 리스트를 보여주세요.,"Пожалуйста, покажите мне винную карту."
 2956,3,Intermediate 1,Restaurant & Pub,Ordering Drinks,Kion vi ŝatus trinki?,What would you like to drink?,お飲み物は何になさいますか？,您想喝点什么？,무엇을 마시고 싶으세요?,Что бы вы хотели выпить?
 2957,3,Intermediate 1,Restaurant & Pub,Ordering Drinks,Mi ne trinkas alkoholon,I don't drink alcohol.,お酒は飲みません。,我不喝酒。,저는 술을 마시지 않아요.,Я не пью алкоголь.
 2958,4,Intermediate 2,Restaurant & Pub,Ordering Drinks,"Mi prenos oranĝan sukon, mi petas","I'll have an orange juice, please.",オレンジジュースをお願いします。,请给我来一杯橙汁。,오렌지 주스 한 잔 주세요.,"Я буду апельсиновый сок, пожалуйста."
@@ -3637,7 +3637,7 @@
 3791,1,Beginner 1,Leisure Time,At the Cinema,Ĝi estas filmo de suspenso,It's a thriller.,スリラーです。,这是一部惊悚片。,스릴러예요.,Это триллер.
 3792,1,Beginner 1,Leisure Time,At the Cinema,Ĉu vi vidis ĝin?,Have you seen it?,見ましたか？,你看过了吗？,그것을 보셨나요?,Ты видел это?
 3793,1,Beginner 1,Leisure Time,At the Cinema,Kiu ludas en ĝi?,Who's playing in it?,誰が出演しているの？,谁参演了？,누가 출연하나요?,Кто в нём играет?
-3794,1,Beginner 1,Leisure Time,At the Cinema,Ĝi estis bonega,It was great.,とても良かったです。,非常棒。,정말 좋았어요.,Он был отличным.
+3794,1,Beginner 1,Leisure Time,At the Cinema,Ĝi estis bonega,It was great.,素晴らしかったです。,非常棒。,최고였어요.,Он был отличным.
 3795,1,Beginner 1,Leisure Time,At the Cinema,Ĝi ne estis malbona,It wasn't bad.,悪くなかったです。,还不错。,나쁘지 않았어요.,Он был неплохой.
 3796,2,Beginner 2,Leisure Time,At the Cinema,Ĝi estas milita filmo,It's a war film.,戦争映画です。,这是一部战争片。,전쟁 영화예요.,Это фильм о войне.
 3797,2,Beginner 2,Leisure Time,At the Cinema,Ĝi estas horora filmo,It's a horror film.,ホラー映画です。,这是一部恐怖片。,공포 영화예요.,Это фильм ужасов.
@@ -3751,7 +3751,7 @@
 3905,3,Intermediate 1,Leisure Time,At the Museum,Fotografado malpermesita,No photography allowed,写真撮影は禁止されています。,禁止拍照,사진 촬영 금지,Фотографировать запрещено
 3906,2,Beginner 2,Leisure Time,At the Museum,Kiuj ekspozicioj nun okazas?,What exhibitions are on now?,現在開催中の展示は何ですか？,现在有哪些展览正在进行？,현재 진행 중인 전시회는 무엇인가요?,Какие сейчас есть выставки?
 3907,2,Beginner 2,Leisure Time,At the Museum,Kiom kostas la eniro?,How much is the entrance fee?,入場料はいくらですか。,门票多少钱？,입장료가 얼마인가요?,Сколько стоит входной билет?
-3908,2,Beginner 2,Leisure Time,At the Museum,La eniro estas senpaga,The entrance is free.,入場は無料です。,免费入场。,입장은 무료입니다.,Вход бесплатный.
+3908,2,Beginner 2,Leisure Time,At the Museum,La eniro estas senpaga,The entrance is free.,入場は無料です。,入场是免费的。,입장은 무료입니다.,Вход бесплатный.
 3909,3,Intermediate 1,Leisure Time,At the Museum,Ĉu ni povas ĉirkaŭrigardi?,Can we look round?,中を見学してもよろしいですか？,我们可以参观一下吗？,둘러봐도 될까요?,Мы можем тут осмотреться?
 3910,4,Intermediate 2,Leisure Time,At the Museum,Kies laboro estas ĉi tio?,Whose work is this?,これは誰の作品ですか？,这是谁的作品？,이것은 누구의 작품인가요?,Чья это работа?
 3911,4,Intermediate 2,Leisure Time,At the Museum,Ĉu ĉi tio estas originalo?,Is this an original?,これは真作ですか？,这是真迹吗？,이것이 원본인가요?,Это подлинник?
@@ -4814,9 +4814,9 @@
 4968,5,Intermediate 3,Communication Means,Letter,"Al la koncernatoj,","To whom it may concern,",関係者各位,敬启者，,"관계자분께,","Вниманию заинтересованных лиц,"
 4969,5,Intermediate 3,Communication Means,Letter,Mi kunsendas mian vivresumon,Please find my CV attached.,履歴書を添付いたしましたのでご確認ください。,请查收我的简历。,제 이력서를 첨부하였으니 확인해 주세요.,Высылаю своё резюме в приложении.
 4970,3,Intermediate 1,Communication Means,Letter,Antaŭdankon,Thank you in advance.,あらかじめお礼申し上げます。,提前感谢。,미리 감사드립니다.,Заранее благодарю.
-4971,4,Intermediate 2,Communication Means,Letter,Respektplene via,"Respectfully yours,",敬具,谨上,존경을 담아 드립니다.,"С уважением,"
+4971,4,Intermediate 2,Communication Means,Letter,Respektplene via,"Respectfully yours,",敬白,谨上,존경을 담아 드립니다.,"С уважением,"
 4972,4,Intermediate 2,Communication Means,Letter,Respondu baldaŭ,Write back soon.,早くお返事ください。,请尽快回复。,곧 답장해 주세요.,Жду скорого ответа.
-4973,4,Intermediate 2,Communication Means,Letter,"Kun plej koraj salutoj,","Kindest regards,",心より敬意を表します。,诚挚问候,진심을 담아 드립니다.,"Всего наилучшего,"
+4973,4,Intermediate 2,Communication Means,Letter,"Kun plej koraj salutoj,","Kindest regards,",心より敬意を表します。,诚挚问候,따뜻한 안부를 전합니다.,"Всего наилучшего,"
 4974,6,Advanced 1,Communication Means,Letter,Dankon pro via helpo en ĉi tiu afero,Thank you for your help in this matter.,本件につきましてご協力いただき、ありがとうございます。,感谢您在这件事上的帮助。,이 일에 도움을 주셔서 감사합니다.,Спасибо вам за помощь в этом деле.
 4975,5,Intermediate 3,Communication Means,Letter,Vi povas kontakti min per retpoŝto,You can contact me by e-mail.,メールでご連絡いただけます。,你可以通过电子邮件联系我。,이메일로 연락하실 수 있습니다.,Вы можете связаться со мной по электронной почте.
 4976,6,Advanced 1,Communication Means,Letter,Bonvolu ne heziti kontakti min,Please do not hesitate to contact me.,どうぞご遠慮なくご連絡ください。,如有需要，欢迎随时与我联系。,언제든지 편하게 연락해 주세요.,Непременно обращайтесь ко мне в случае необходимости.
@@ -4913,7 +4913,7 @@
 5067,3,Intermediate 1,Time & Weather,Time Expressions,En la venonta monato,Next month.,来月,下个月,다음 달에.,В следующем месяце.
 5068,3,Intermediate 1,Time & Weather,Time Expressions,Ĉi-jare,This year.,今年,今年,올해.,В этом году.
 5069,3,Intermediate 1,Time & Weather,Time Expressions,Antaŭ unu jaro,A year ago.,一年前。,一年前。,1년 전.,Год назад.
-5070,5,Intermediate 3,Time & Weather,Time Expressions,Hieraŭ nokte,Last night.,昨夜,昨晚,어젯밤.,Прошлой ночью.
+5070,5,Intermediate 3,Time & Weather,Time Expressions,Hieraŭ nokte,Last night.,昨夜,昨天夜里,어젯밤.,Прошлой ночью.
 5071,4,Intermediate 2,Time & Weather,Time Expressions,Antaŭ unu horo,An hour ago.,1時間前。,一小时前。,한 시간 전에.,Час назад.
 5072,4,Intermediate 2,Time & Weather,Time Expressions,Matene,In the morning.,朝に,早上,아침에.,Утром.
 5073,4,Intermediate 2,Time & Weather,Time Expressions,Vespere,In the evening.,夕方に,在晚上,저녁에.,Вечером.
@@ -4973,7 +4973,7 @@
 5127,5,Intermediate 3,Time & Weather,Weather,La suno brilas,The sun's shining.,太陽が輝いている。,阳光明媚。,해가 비치고 있어요.,Светит солнце.
 5128,6,Advanced 1,Time & Weather,Weather,La vetero estas venta,The weather is windy.,風が強いです。,天气有风。,바람이 많이 불어요.,Погода ветреная.
 5129,6,Advanced 1,Time & Weather,Weather,"Malvarmas, ĉu ne?","It's cold, isn't it?",寒いですね？,天气挺冷的，对吧？,"날씨가 꽤 춥네요, 그렇죠?","Холодно, правда?"
-5130,6,Advanced 1,Time & Weather,Weather,"Varmegas, ĉu ne?","It's hot, isn't it?",暑いですね？,天气真热，是吧？,날씨가 정말 덥죠?,"Жарко, правда?"
+5130,6,Advanced 1,Time & Weather,Weather,"Varmegas, ĉu ne?","It's hot, isn't it?",すごく暑いですね？,天气真热，是吧？,날씨가 정말 덥죠?,"Жарко, правда?"
 5131,6,Advanced 1,Time & Weather,Weather,Kia bela vetero!,What beautiful weather!,なんていい天気なんだろう！,多么美好的天气！,정말 날씨가 너무 좋네요!,Какая прекрасная погода!
 5132,7,Advanced 2,Time & Weather,Weather,Hodiaŭ la vetero estas bona,The weather today is good.,今日は天気がいいです。,今天天气很好。,오늘은 날씨가 좋아요.,Сегодня хорошая погода.
 5133,7,Advanced 2,Time & Weather,Weather,Ne estas tre agrabla tago,It's not a very nice day.,あまりいい天気ではありません。,今天天气不太好。,오늘은 날씨가 그다지 좋지 않아요.,Не очень приятный день.
